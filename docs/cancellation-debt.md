@@ -1,5 +1,7 @@
 # The request ended. The work did not.
 
+[한국어](cancellation-debt.ko.md) · [Project overview](../README.md)
+
 The interesting failure is not that a slow dependency times out. It is that a concurrency limiter can appear healthy while the work it claims to bound is still accumulating.
 
 This is the primary experiment in Federated Catalog Lab. It uses an Apollo Federation gateway and three HTTP subgraphs. Inventory work holds a slot with a synthetic timer; the HTTP requests, dropped connections and cancellation propagation are real. This is not a database or production-load benchmark.
@@ -24,12 +26,12 @@ Run four sequential attempts of the same **read**, with a configured 160 ms subg
 
 The first local probe observed:
 
-| Policy | Peak active jobs | Peak held permits | Active after final response | Completed / cancelled / rejected |
-| --- | ---: | ---: | ---: | --- |
-| Timeout only | 4 | 4 | 4 | 4 / 0 / 0 |
-| Incorrect release on caller timeout | 4 | 1 | 4 | 4 / 0 / 0 |
-| Hold permit until settlement | 2 | 2 | 2 | 2 / 0 / 2 |
-| Hold permit + cooperative cancellation | 1 | 1 | 0 | 0 / 4 / 0 |
+| Policy                                 | Peak active jobs | Peak held permits | Active after final response | Completed / cancelled / rejected |
+| -------------------------------------- | ---------------: | ----------------: | --------------------------: | -------------------------------- |
+| Timeout only                           |                4 |                 4 |                           4 | 4 / 0 / 0                        |
+| Incorrect release on caller timeout    |                4 |                 1 |                           4 | 4 / 0 / 0                        |
+| Hold permit until settlement           |                2 |                 2 |                           2 | 2 / 0 / 2                        |
+| Hold permit + cooperative cancellation |                1 |                 1 |                           0 | 0 / 4 / 0                        |
 
 These are an observed example, not constants embedded in the UI or promises about another machine. Rerun the command and inspect the raw report. The experiment fails visibly if its expected counterexamples are not observed or source files change during the run.
 
@@ -79,6 +81,8 @@ Catalog and merchant fields survive all four policies. Missing inventory stays `
 - [Apollo Gateway API](https://www.apollographql.com/docs/apollo-server/using-federation/api/apollo-gateway): custom data sources. The installed `@apollo/gateway@2.14.4/dist/datasources/RemoteGraphQLDataSource.js` was inspected for its actual request-init and fetcher behavior; no private method is overridden.
 
 ## 한국어
+
+[취소 전달 과정과 검증 범위의 전체 한국어 설명](cancellation-debt.ko.md)을 제공합니다. 아래는 요약입니다.
 
 핵심은 타임아웃 자체가 아니라 **실행 허가의 수명**입니다. 응답을 기다리는 쪽이 떠났다는 이유로 허가를 반환하면, 허가 수는 1개인데 실제 작업은 4개가 실행되는 상황을 만들 수 있습니다. 화면과 원본 보고서는 이 잘못된 대조군을 명시적으로 구분합니다.
 

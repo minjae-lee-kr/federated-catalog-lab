@@ -4,7 +4,7 @@
 
 **The request ended. The work did not.**
 
-A concurrency limiter can report **one held permit while four jobs are still running**. This Apollo Federation lab reproduces that failure over real HTTP, then compares two ways to protect the underlying capacity.
+A concurrency limiter can report **one held permit while four jobs are still running**. This lab implements request-scoped cancellation and permits owned until work settles, then compares their behavior over real Apollo Federation HTTP calls.
 
 The practical question: **who owns a permit after its caller gives up?**
 
@@ -25,12 +25,12 @@ For terminal execution, use `pnpm debt`. For a saved, read-only page, use `pnpm 
 
 Four sequential reads. A configured **160 ms deadline per subgraph fetch**, **1,000 ms of uncancelled timer work**, and an optional capacity limit of **two**. These are experimental settings, not performance measurements.
 
-| Policy | Observed peak jobs / permits | What it reveals |
-| --- | ---: | --- |
-| Timeout only | 4 / 4 | Ending the wait does not end the work. |
-| Release on caller timeout — deliberately wrong | 4 / 1 | A healthy-looking permit counter can hide excess work. |
-| Hold until work settles | 2 / 2 | Capacity stays bounded, but abandoned work occupies slots and later attempts are rejected. |
-| Hold until settlement + cooperative cancellation | 1 / 1 | Work that supports cancellation settles sooner and returns its permit. |
+| Policy                                           | Observed peak jobs / permits | What it reveals                                                                            |
+| ------------------------------------------------ | ---------------------------: | ------------------------------------------------------------------------------------------ |
+| Timeout only                                     |                        4 / 4 | Ending the wait does not end the work.                                                     |
+| Release on caller timeout — deliberately wrong   |                        4 / 1 | A healthy-looking permit counter can hide excess work.                                     |
+| Hold until work settles                          |                        2 / 2 | Capacity stays bounded, but abandoned work occupies slots and later attempts are rejected. |
+| Hold until settlement + cooperative cancellation |                        1 / 1 | Work that supports cancellation settles sooner and returns its permit.                     |
 
 These are observed values from a local run, not constants embedded in the display. Each run checks whether the expected counterexamples actually occurred. The checker reconstructs jobs and permits from events, correlates them with the HTTP responses and distinguishes **cancellation requested** from **work cancelled**.
 

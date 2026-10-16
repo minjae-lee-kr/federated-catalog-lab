@@ -1,6 +1,6 @@
 # The federation explorer
 
-[Cancellation Debt](../README.md) · [한국어](../README.ko.md)
+[Cancellation Debt](../README.md) · [한국어 프로젝트 소개](../README.ko.md)
 
 **One query. Three domains. Failures you can inspect.**
 
@@ -32,14 +32,14 @@ For a terminal-only walkthrough, run `pnpm demo`. It starts fresh servers, print
 
 ## What this demonstrates
 
-| Decision | Evidence to inspect |
-| --- | --- |
-| Entity boundaries compose into one API | `Product @key(fields: "sku")` joins catalog and inventory; `Merchant @key(fields: "id")` supplies merchant details |
-| Batching preserves semantics | Duplicate keys are deduplicated inside one request; result positions and missing records stay aligned |
-| Failure is part of the product contract | Nullable inventory preserves useful data; sold out, missing records and dependency failure remain distinct |
-| Schema checks and query checks are complementary | Tests distinguish composition errors, removed fields, weakened nullability and enum additions |
-| Observability has limits | Per-fetch timings and actual loader keys appear in `extensions.lab`; timed-out responses do not invent missing batch telemetry |
-| Local tooling can have a narrow boundary | Loopback-only HTTP, strict Host/Origin checks, a 32 KiB body limit and explicit telemetry opt-out |
+| Decision                                         | Evidence to inspect                                                                                                            |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| Entity boundaries compose into one API           | `Product @key(fields: "sku")` joins catalog and inventory; `Merchant @key(fields: "id")` supplies merchant details             |
+| Batching preserves semantics                     | Duplicate keys are deduplicated inside one request; result positions and missing records stay aligned                          |
+| Failure is part of the product contract          | Nullable inventory preserves useful data; sold out, missing records and dependency failure remain distinct                     |
+| Schema checks and query checks are complementary | Tests distinguish composition errors, removed fields, weakened nullability and enum additions                                  |
+| Observability has limits                         | Per-fetch timings and actual loader keys appear in `extensions.lab`; timed-out responses do not invent missing batch telemetry |
+| Local tooling can have a narrow boundary         | Loopback-only HTTP, strict Host/Origin checks, a 32 KiB body limit and explicit telemetry opt-out                              |
 
 ## A compact architecture
 
@@ -67,21 +67,31 @@ query CatalogCards($skus: [ID!]!) {
   products(skus: $skus) {
     sku
     name
-    price { amountMinor currency }
-    merchant { id name city }
-    availability { status quantity }
+    price {
+      amountMinor
+      currency
+    }
+    merchant {
+      id
+      name
+      city
+    }
+    availability {
+      status
+      quantity
+    }
   }
 }
 ```
 
 Variables: `{"skus":["demo-ceramic","demo-notebook","demo-lamp"]}`.
 
-| Scenario | Product fields | Inventory | Errors |
-| --- | --- | --- | --- |
-| `healthy` | Present | In stock / sold out | None |
-| `inventory-error` | Present | `null` for all three | `INVENTORY_UNAVAILABLE`, with field paths |
-| `inventory-timeout` | Present | `null` for all three | `SUBGRAPH_TIMEOUT` |
-| `missing-inventory` | Present | Lamp is `null`; other records remain | None |
+| Scenario            | Product fields | Inventory                            | Errors                                    |
+| ------------------- | -------------- | ------------------------------------ | ----------------------------------------- |
+| `healthy`           | Present        | In stock / sold out                  | None                                      |
+| `inventory-error`   | Present        | `null` for all three                 | `INVENTORY_UNAVAILABLE`, with field paths |
+| `inventory-timeout` | Present        | `null` for all three                 | `SUBGRAPH_TIMEOUT`                        |
+| `missing-inventory` | Present        | Lamp is `null`; other records remain | None                                      |
 
 The original explorer's default timeout is an intentionally small **synthetic 180 ms deadline**, with a 450 ms injected delay. These are demonstration settings, not recommended production values or benchmark results. Its default aborted gateway fetch does not cancel work inside the subgraph. The separate cancellation experiment explicitly wires cooperative cancellation; see [design decisions](design.md) and [its boundaries](cancellation-debt.md).
 

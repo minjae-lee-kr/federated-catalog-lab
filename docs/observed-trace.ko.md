@@ -16,7 +16,7 @@
 
 각 조건의 첫 작업 진입을 0ms로 맞추고, 기록된 이벤트 순서와 카운터를 계단선으로 표시했습니다. 보간하거나 평활화한 값은 없습니다. 아래의 짧은 눈금은 호출자 완료, 십자 표시는 진입 거절입니다. 올바른 조건에서 작업 수와 허가 수가 겹치는 것은 의도된 결과입니다. 각 선은 해당 조건의 마지막 기록에서 끝납니다. 시간은 원본에 기록된 0.01ms 정밀도까지만 표현합니다.
 
-[원본 보고서](observed-trace/recording/report.json) · [기록 식별 정보와 해시](observed-trace/recording/provenance.json) · [취소 전달과 한계](cancellation-debt.md)
+[원본 보고서](observed-trace/recording/report.json) · [기록 식별 정보와 해시](observed-trace/recording/provenance.json) · [취소 전달과 한계](cancellation-debt.ko.md)
 
 검사기는 관측된 이벤트를 검증하며 기록되지 않은 작업까지 증명하지 않습니다. 단일 프로세스의 이 기록은 DB 취소, CPU 작업 중단, 롤백, 여러 복제본의 실행 한도나 실서비스 처리량을 입증하지 않습니다. 소스 해시는 재현을 돕지만 실행의 진위를 인증하지는 않습니다. 기록의 소스 지문은 당시 소스를 가리키며, 이후 추가한 이 문서를 가리키지 않습니다.
 
