@@ -1,4 +1,5 @@
 import { ApolloServer } from '@apollo/server';
+import { randomUUID } from 'node:crypto';
 import { ApolloServerPluginInlineTraceDisabled, ApolloServerPluginLandingPageDisabled, ApolloServerPluginSchemaReportingDisabled, ApolloServerPluginUsageReportingDisabled } from '@apollo/server/plugin/disabled';
 import { buildSubgraphSchema } from '@apollo/subgraph';
 import { GraphQLError, parse } from 'graphql';
@@ -9,6 +10,7 @@ import type { SubgraphContext } from './loaders.ts';
 import type { ProductRecord } from './data.ts';
 import { parseScenario } from './scenarios.ts';
 import { startGraphQLHttp } from './http-server.ts';
+import type { InventoryWork } from './cancellation-work.ts';
 
 const resolvers = {
   catalog: {
@@ -42,7 +44,7 @@ export const disabledPlugins = () => [
   ApolloServerPluginInlineTraceDisabled(), ApolloServerPluginLandingPageDisabled(),
 ];
 
-export async function startSubgraph(name: ServiceName, port = 0, slowInventoryMs = 450) {
+export async function startSubgraph(name: ServiceName, port = 0, slowInventoryMs = 450, inventoryWork?: InventoryWork) {
   const server = new ApolloServer<SubgraphContext>({
     schema: buildSubgraphSchema({ typeDefs: parse(schemaSources[name]), resolvers: resolvers[name] }),
     includeStacktraceInErrorResponses: false,
@@ -55,6 +57,18 @@ export async function startSubgraph(name: ServiceName, port = 0, slowInventoryMs
       },
     }],
   });
-  const running = await startGraphQLHttp(server, async req => createContext(parseScenario(req.headers['x-lab-scenario']), slowInventoryMs), port);
+  const running = await startGraphQLHttp(server, async (req, lifetime) => {
+    const requestId = typeof req.headers['x-lab-request-id'] === 'string' && /^[a-f0-9-]{36}$/.test(req.headers['x-lab-request-id']) ? req.headers['x-lab-request-id'] : randomUUID();
+    const rawDeadline = req.headers['x-lab-deadline-at'];
+    let deadlineAt: number | undefined;
+    if (rawDeadline !== undefined) {
+      if (typeof rawDeadline !== 'string' || !/^\d+$/.test(rawDeadline) || !Number.isSafeInteger(Number(rawDeadline)) || Number(rawDeadline) > Date.now() + 10_000) {
+        throw new GraphQLError('Invalid local deadline.', { extensions: { code: 'BAD_USER_INPUT' } });
+      }
+      deadlineAt = Number(rawDeadline);
+    }
+    return createContext(parseScenario(req.headers['x-lab-scenario']), slowInventoryMs,
+      name === 'inventory' && inventoryWork ? () => inventoryWork.run({ requestId, signal: lifetime.signal, ...(deadlineAt === undefined ? {} : { deadlineAt }) }) : undefined);
+  }, port);
   return { name, ...running };
 }

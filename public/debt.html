@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cancellation debt</title><link rel="stylesheet" href="/debt.css"><script type="module" src="/debt.js"></script></head>
+<body>
+  <header><a href="/" class="brand">FIELDWORK <span>/ GRAPHQL</span></a><button id="language" type="button">한국어</button></header>
+  <main>
+    <section class="hero"><p class="eyebrow" data-i18n="eyebrow"></p><h1 data-i18n="title"></h1><p class="lede" data-i18n="lede"></p><p class="boundary" data-i18n="boundary"></p></section>
+    <section class="setup" aria-labelledby="setup-title"><div><h2 id="setup-title" data-i18n="setup"></h2><p data-i18n="fixture"></p><p class="route" data-i18n="route"></p></div><button id="run" class="primary" type="button" data-i18n="run"></button></section>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <section id="results" hidden>
+      <div class="section-title"><h2 data-i18n="comparison"></h2><button id="download" type="button" data-i18n="download"></button></div>
+      <p data-i18n="comparisonNote" class="muted"></p>
+      <div class="table-wrap"><table><thead><tr><th data-i18n="policy"></th><th data-i18n="peakWork"></th><th data-i18n="peakPermits"></th><th data-i18n="leftover"></th><th data-i18n="completed"></th><th data-i18n="cancelled"></th><th data-i18n="rejected"></th></tr></thead><tbody id="rows"></tbody></table></div>
+      <section class="trace" aria-labelledby="trace-title"><div class="section-title"><h2 id="trace-title" data-i18n="trace"></h2><label><span class="sr-only" data-i18n="choose"></span><select id="case"></select></label></div><p id="case-note"></p><div class="legend"><span class="active-key" data-i18n="active"></span><span class="permit-key" data-i18n="permits"></span><span class="caller-key" data-i18n="caller"></span></div><div id="chart"></div><p class="muted" data-i18n="timeNote"></p><div id="finding" class="finding"></div><details><summary data-i18n="events"></summary><pre id="events" tabindex="0"></pre></details></section>
+      <details class="raw"><summary data-i18n="raw"></summary><pre id="raw" tabindex="0"></pre></details>
+    </section>
+    <section class="insight"><p class="eyebrow" data-i18n="lessonLabel"></p><h2 data-i18n="lesson"></h2><p data-i18n="lessonBody"></p></section>
+    <footer><p data-i18n="limits"></p><p data-i18n="original"></p></footer>
+  </main>
+</body></html>

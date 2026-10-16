@@ -6,4 +6,5 @@ coverage/
 !.env.example
 *.log
 schema-impact.json
+.local/
 .DS_Store

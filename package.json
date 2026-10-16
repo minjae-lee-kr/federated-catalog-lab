@@ -16,6 +16,8 @@
     "test": "node --test tests/*.test.ts",
     "contracts": "node src/check-contracts.ts",
     "impact": "node src/schema-impact-cli.ts",
+    "debt": "node src/cancellation-cli.ts",
+    "debt:ui": "node src/cancellation-main.ts",
     "demo": "node src/run-scenarios.ts",
     "verify": "pnpm typecheck && pnpm contracts && pnpm test && pnpm build"
   },

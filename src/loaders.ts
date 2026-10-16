@@ -15,7 +15,7 @@ export interface SubgraphContext {
 }
 
 /** New loaders for every HTTP operation. No cache survives the request boundary. */
-export function createContext(scenario: Scenario = 'healthy', delayMs = 450): SubgraphContext {
+export function createContext(scenario: Scenario = 'healthy', delayMs = 450, inventoryWork?: () => Promise<void>): SubgraphContext {
   const batches: BatchRecord[] = [];
   return {
     scenario,
@@ -33,7 +33,7 @@ export function createContext(scenario: Scenario = 'healthy', delayMs = 450): Su
     }),
     inventory: new DataLoader(async keys => {
       batches.push({ source: 'inventory', keys: [...keys] });
-      if (scenario === 'inventory-timeout') await delay(delayMs);
+      if (scenario === 'inventory-timeout') await (inventoryWork ? inventoryWork() : delay(delayMs));
       if (scenario === 'inventory-error') {
         throw new GraphQLError('Synthetic inventory dependency is unavailable.', { extensions: { code: 'INVENTORY_UNAVAILABLE' } });
       }

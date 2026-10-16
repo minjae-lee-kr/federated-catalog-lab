@@ -1,5 +1,9 @@
 # Federated Catalog Lab
 
+This experimental branch adds a focused question: **can a concurrency limiter report one held permit while four jobs are still running?** `pnpm debt` reproduces that counterexample over the real gateway and three HTTP subgraphs, compares two mitigations, and saves raw events with source provenance. `pnpm debt:ui` opens a Korean/English experiment at **http://127.0.0.1:4182/**. Read [the cancellation-debt case study](docs/cancellation-debt.md) for the invariant, observations and limits. The stable `main` branch keeps the original lab.
+
+실험 브랜치에서는 **실행 허가가 1개로 보이는데 실제 작업은 4개가 남는 상황**을 재현합니다. `pnpm debt`로 원본 근거를 수집하거나 `pnpm debt:ui`로 한국어·영문 화면을 실행하세요. [실험 설명](docs/cancellation-debt.md#한국어)에서 취소가 해결하는 범위와 해결하지 못하는 범위를 확인할 수 있습니다.
+
 **One query. Three domains. Failures you can inspect.**
 
 A small Apollo Federation server project that makes entity composition, request-scoped batching, partial responses and API compatibility tangible. It includes a local interactive explorer, real HTTP subgraphs and tests that deliberately break the graph.
@@ -81,7 +85,7 @@ Variables: `{"skus":["demo-ceramic","demo-notebook","demo-lamp"]}`.
 | `inventory-timeout` | Present | `null` for all three | `SUBGRAPH_TIMEOUT` |
 | `missing-inventory` | Present | Lamp is `null`; other records remain | None |
 
-The default timeout is an intentionally small **synthetic 180 ms deadline**, with a 450 ms injected delay. These are demonstration settings, not recommended production values or benchmark results. An aborted gateway fetch does not cancel work inside the subgraph. See [design decisions](docs/design.md).
+The original explorer's default timeout is an intentionally small **synthetic 180 ms deadline**, with a 450 ms injected delay. These are demonstration settings, not recommended production values or benchmark results. Its default aborted gateway fetch does not cancel work inside the subgraph. The separate cancellation experiment explicitly wires cooperative cancellation; see [design decisions](docs/design.md) and [its boundaries](docs/cancellation-debt.md).
 
 ## Verification
 
