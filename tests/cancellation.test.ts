@@ -35,6 +35,51 @@ test('real HTTP retry sequence distinguishes waiting, permit ownership and physi
   const missingSettlement = structuredClone(incorrect.final);
   missingSettlement.events = missingSettlement.events.filter(event => event.kind !== 'completed');
   assert.equal(checkWork(missingSettlement).bookkeepingValid, false);
+  const expected = incorrect.final.events.filter(event => event.kind === 'caller-completed').map(event => event.requestId);
+  assert.equal(checkWork(incorrect.final, expected).bookkeepingValid, true);
+  const duplicateCompletion = structuredClone(incorrect.final);
+  const last = duplicateCompletion.events.at(-1)!;
+  duplicateCompletion.events.push({ ...last, sequence: last.sequence + 1, kind: 'caller-completed', requestId: expected[0]!, jobId: null });
+  assert.equal(checkWork(duplicateCompletion).bookkeepingValid, false);
+  const missingCompletion = structuredClone(incorrect.final);
+  missingCompletion.events = missingCompletion.events.filter(event => event.kind !== 'caller-completed' || event.requestId !== expected[0]);
+  missingCompletion.events.forEach((event, index) => { event.sequence = index + 1; });
+  assert.equal(checkWork(missingCompletion, expected).bookkeepingValid, false);
+  assert.equal(checkWork(incorrect.final, expected.slice(1)).bookkeepingValid, false);
+});
+
+test('real HTTP evidence fails if response identity or forwarded work identity loses correlation', { timeout: 10_000 }, async () => {
+  const realFetch = globalThis.fetch;
+  for (const boundary of ['response', 'forwarding'] as const) {
+    let mutated = 0;
+    globalThis.fetch = async (input, init) => {
+      if (boundary === 'forwarding') {
+        const headers = new Headers(init?.headers);
+        if (headers.has('x-lab-request-id')) {
+          headers.delete('x-lab-request-id'); mutated++;
+          return realFetch(input, { ...init, headers });
+        }
+      }
+      const response = await realFetch(input, init);
+      if (boundary === 'response') {
+        const body = await response.clone().json() as { extensions?: { lab?: { requestId?: string } } };
+        if (body.extensions?.lab?.requestId) {
+          body.extensions.lab.requestId = `wrong-response-${++mutated}`;
+          const headers = new Headers(response.headers); headers.delete('content-length');
+          return new Response(JSON.stringify(body), { status: response.status, headers });
+        }
+      }
+      return response;
+    };
+    try {
+      const item = await runWorkCase('cooperative');
+      assert.ok(mutated >= 4, `${boundary} mutation reached actual HTTP responses or requests`);
+      assert.equal(item.passed, false);
+      assert.equal(item.analysis.bookkeepingValid, false);
+      assert.ok(item.analysis.violations.some(value => value.startsWith('caller has no observed work decision:')));
+      assert.ok(item.checks.filter(check => check.name.endsWith('-partial-data')).every(check => check.passed));
+    } finally { globalThis.fetch = realFetch; }
+  }
 });
 
 test('deadline reaches cooperative subgraph work even while its HTTP caller remains connected', async () => {

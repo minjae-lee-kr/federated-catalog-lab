@@ -12,6 +12,7 @@ export async function runWorkCase(mode: WorkMode) {
   const work = new InventoryWork(mode, experimentFixture.workMs, experimentFixture.capacity);
   const lab = await startLab({ inventoryWork: work, subgraphTimeoutMs: experimentFixture.responseTimeoutMs });
   const responses: { attempt: number; status: number; body: unknown }[] = [];
+  const expectedRequestIds: string[] = [];
   const checks: { name: string; passed: boolean }[] = [];
   try {
     for (let attempt = 1; attempt <= experimentFixture.attempts; attempt++) {
@@ -23,6 +24,7 @@ export async function runWorkCase(mode: WorkMode) {
       const body = await response.json() as { extensions?: { lab?: { requestId?: string } }; data?: { products?: { sku: string; name: string; merchant: { name: string } | null; availability: unknown }[] }; errors?: unknown[] };
       const requestId = body.extensions?.lab?.requestId;
       if (typeof requestId !== 'string') throw new Error('Gateway response lacks an observed request identity.');
+      expectedRequestIds.push(requestId);
       work.callerCompleted(requestId);
       responses.push({ attempt, status: response.status, body });
       checks.push({ name: `attempt-${attempt}-partial-data`, passed: response.status === 200 && (body.errors?.length ?? 0) > 0
@@ -32,7 +34,7 @@ export async function runWorkCase(mode: WorkMode) {
     const afterCallers = work.snapshot();
     await work.whenIdle();
     const final = work.snapshot();
-    const analysis = checkWork(final);
+    const analysis = checkWork(final, expectedRequestIds);
     checks.push({ name: 'raw-event-bookkeeping', passed: analysis.bookkeepingValid }, { name: 'all-work-drained', passed: analysis.drained });
     if (mode === 'timeout-only') checks.push({ name: 'timeouts-leave-overlapping-work', passed: afterCallers.active > experimentFixture.capacity && final.completed === experimentFixture.attempts });
     if (mode === 'early-release') checks.push({ name: 'permit-count-can-lie-about-work', passed: analysis.permitCounterBoundSatisfied === true && analysis.physicalBoundSatisfied === false && !analysis.permitLifetimeValid });
