@@ -1,0 +1,43 @@
+{
+  "formatVersion": 1,
+  "description": "Historical local capture preserved byte-for-byte. Added presentation assets do not change the recorded source identity.",
+  "recording": "report.json",
+  "recordingSha256": "421617b5c8e27bb1446a864e909dfc3f0a3de6e223f914d323aa07502893aa50",
+  "generatedAt": "2026-10-16T16:48:24.068Z",
+  "source": {
+    "revision": "ff47d27ac38071cf7d1c611492b55f657d8d0a27",
+    "dirty": false,
+    "sha256": "d9fc503697e95ce98a342a1152d87cd529fdcb3283b50e0c2f817ccf118333f8",
+    "unchanged": true
+  },
+  "fixture": {
+    "attempts": 4,
+    "responseTimeoutMs": 160,
+    "workMs": 1000,
+    "capacity": 2
+  },
+  "figures": [
+    "../assets/cancellation-trace-en.svg",
+    "../assets/cancellation-trace-ko.svg"
+  ],
+  "transformation": "For each plotted case, subtract the first admitted event elapsedMs, keep the original event sequence and counters, round to the recorded 0.01 ms precision, and draw post-step lines. Do not smooth, resample or extend lines beyond their last recorded event.",
+  "selectedCases": [
+    "early-release",
+    "admission-only"
+  ],
+  "interpretation": "The early-release control is intentionally incorrect. Overall report passed=true means the expected counterexample occurred; physicalBoundSatisfied and permitLifetimeValid remain false for that control.",
+  "cooperativeObservation": "All four cooperative cancel-requested events in this capture have reason=deadline. Other implemented propagation paths are not asserted to have fired in this trace.",
+  "rendering": {
+    "library": "Matplotlib 3.11.2",
+    "fonts": "SVG glyphs are embedded. Regeneration requires an installed Korean font; font and library differences may change SVG bytes without changing plotted events.",
+    "renderer": "../render.py"
+  },
+  "limits": [
+    "Real HTTP/socket cancellation surrounds synthetic timer-held work. This does not demonstrate cancellation of a database query, CPU task or external side effect.",
+    "Response deadlines and work durations are configured fixtures, not observed speed improvements or representative traffic.",
+    "Admission limits belong to this one inventory process. No global or cross-replica capacity bound is claimed.",
+    "Absolute deadlines use this shared host clock. Clock skew and authenticated cross-service deadline policy are outside this lab.",
+    "Cancellation is explicit and cooperative. The admission-only control deliberately ignores it and retains permits until real settlement.",
+    "The raw-event checker verifies recorded transitions, not uninstrumented work. Source hashes aid reproduction; they are not execution attestations."
+  ]
+}

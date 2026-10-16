@@ -2,7 +2,7 @@
 
 The interesting failure is not that a slow dependency times out. It is that a concurrency limiter can appear healthy while the work it claims to bound is still accumulating.
 
-This is a secondary, local experiment on `experiment/cancellation-debt`. It uses the existing Apollo Federation gateway and three HTTP subgraphs. Inventory work holds a slot with a synthetic timer; the HTTP requests, dropped connections and cancellation propagation are real. This is not a database or production-load benchmark.
+This is the primary experiment in Federated Catalog Lab. It uses an Apollo Federation gateway and three HTTP subgraphs. Inventory work holds a slot with a synthetic timer; the HTTP requests, dropped connections and cancellation propagation are real. This is not a database or production-load benchmark.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -82,7 +82,7 @@ Catalog and merchant fields survive all four policies. Missing inventory stays `
 
 핵심은 타임아웃 자체가 아니라 **실행 허가의 수명**입니다. 응답을 기다리는 쪽이 떠났다는 이유로 허가를 반환하면, 허가 수는 1개인데 실제 작업은 4개가 실행되는 상황을 만들 수 있습니다. 화면과 원본 보고서는 이 잘못된 대조군을 명시적으로 구분합니다.
 
-같은 조회를 네 번 시도하며 응답 제한 160ms, 가상 작업 1,000ms, 동시 실행 허가 2개를 사용합니다. 모두 현상을 드러내기 위한 설정값입니다. 속도 개선율이나 운영 트래픽 처리량을 측정하지 않습니다.
+같은 조회를 네 번 시도하며 서브그래프 조회마다 응답 제한 160ms, 가상 작업 1,000ms, 동시 실행 허가 2개를 사용합니다. 모두 현상을 드러내기 위한 설정값입니다. 속도 개선율이나 운영 트래픽 처리량을 측정하지 않습니다.
 
 올바른 실행 제한기는 작업이 실제로 끝날 때까지 허가를 유지합니다. 하위 작업이 취소를 무시하면 작업은 계속되지만 실행량은 제한할 수 있으며, 그동안 추가 시도를 거절해야 합니다. 협력적 취소는 이번 타이머를 실제로 종료시켜 허가를 더 일찍 돌려줄 수 있게 합니다. DB 작업이나 외부 서비스도 자동으로 멈춘다는 뜻은 아닙니다.
 

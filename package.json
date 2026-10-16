@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "A runnable Apollo Federation lab: entity composition, request-scoped batching, partial failure and schema contracts.",
+  "description": "Cancellation Debt: expose the gap between timed-out callers, concurrency permits and unfinished work over real Apollo Federation HTTP requests.",
   "engines": {
     "node": ">=24.0.0 <25"
   },

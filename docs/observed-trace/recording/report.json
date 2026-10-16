@@ -1,0 +1,3561 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-16T16:48:24.068Z",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64",
+    "undici": "7.29.0"
+  },
+  "fixture": {
+    "attempts": 4,
+    "responseTimeoutMs": 160,
+    "workMs": 1000,
+    "capacity": 2
+  },
+  "source": {
+    "sha256": "d9fc503697e95ce98a342a1152d87cd529fdcb3283b50e0c2f817ccf118333f8",
+    "manifest": [
+      {
+        "path": ".github/workflows/verify.yml",
+        "sha256": "5b24506a945c18342badd341451e6d9a638e6f7c7339e2b9d5c72da5ea09abb3"
+      },
+      {
+        "path": ".npmrc",
+        "sha256": "cde76ca04e048c3eba070a2c0dfcf5b723cf6014eab177157096b924f24ec4ca"
+      },
+      {
+        "path": "README.md",
+        "sha256": "ccd1660df6c31f7488f8e02c3b6dae6ea3c6549ccbb8374e4082bf70e4ac2ba0"
+      },
+      {
+        "path": "SECURITY.md",
+        "sha256": "1efb7b936cc2506263b6f40b0c295c19ddd62641ebd792cc508d918921ed2dbb"
+      },
+      {
+        "path": "docs/cancellation-debt.md",
+        "sha256": "c70be5257d18333504b136bd495e31b5f5b32ecdffbeddf2bbc012fe55a2c4bf"
+      },
+      {
+        "path": "docs/cover.svg",
+        "sha256": "5dea0ce28359547d3244bef8bcab59570e32d6d2826ddbfb8d260d96f6c962c9"
+      },
+      {
+        "path": "docs/design.md",
+        "sha256": "19cff53940e05f03bbecd8714767c2b412ad47f1fd7a3488775b84621e3523b4"
+      },
+      {
+        "path": "docs/review-guide.md",
+        "sha256": "54eb56fb99a926c7cbf1958754e1a4ab9ebe7158ac6f4fe30617d47c58b3477a"
+      },
+      {
+        "path": "docs/schema-evolution.md",
+        "sha256": "38764f5bfd7900097d5e5f5bd422aad58aaec8492e981671745725d49aafb3fa"
+      },
+      {
+        "path": "operations/CatalogCards.graphql",
+        "sha256": "cad6ae2b4a9a405d27657ff9effe546d24eea03669099f295479d0b5dc806933"
+      },
+      {
+        "path": "operations/CatalogOnly.graphql",
+        "sha256": "54eaa3cae5b24cc5b39a320633ca1d32a99fc3019e01e2f3433950642dfc3b35"
+      },
+      {
+        "path": "package.json",
+        "sha256": "d83648ad72cd78fb6d89d7d86ae3788517a387373ef1b8e0c1fd86836b09c6eb"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "sha256": "a73539ceff303eae1b4c1fa0344be9990d8958d3b5344d5f744390040fe43e6a"
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "sha256": "154f665dd13fb71bc567d561163fb7c651ce6672bfffc53cb38c7bc76ddf17f0"
+      },
+      {
+        "path": "public/app.js",
+        "sha256": "d1688733581eb3e76d19d308cc68a60314d32b4229a4c73d0dfe45c85ab888c5"
+      },
+      {
+        "path": "public/debt-live.js",
+        "sha256": "16e3d8b5a4b16e529daefb4142005d93220c317d76567b3b5b5a3bfd1657bf63"
+      },
+      {
+        "path": "public/debt.css",
+        "sha256": "b43d0f2495c16bc525f074fc46fb5df31664f90b55869b6f569c650599891f8e"
+      },
+      {
+        "path": "public/debt.html",
+        "sha256": "fc58bafded56c7834d2a9b6adf35b78ebfe65ce84888634c6e95eecc9d189399"
+      },
+      {
+        "path": "public/debt.js",
+        "sha256": "00d57638ae1353e9b37fdd6393551527802d6099ea0ef70d28bdda55b14ae323"
+      },
+      {
+        "path": "public/index.html",
+        "sha256": "b2b4bd55575ae3feccb7060c66d00b4ed1e53e52aae5ea5f5c729913ed411d37"
+      },
+      {
+        "path": "public/style.css",
+        "sha256": "b2edca70dba1490f5f0a37e74664078b3be7bc33511dd2cb981ace2615707383"
+      },
+      {
+        "path": "schemas/api-baseline.graphql",
+        "sha256": "5dac235c739cda409e68e44b5819743753870c8d222132bae321860580a67d3f"
+      },
+      {
+        "path": "schemas/catalog.graphql",
+        "sha256": "8ab1ce0098989f02dc5575e6f93bea9a840b1ac5856241f16a1474cdc4d1f7fd"
+      },
+      {
+        "path": "schemas/inventory.graphql",
+        "sha256": "1d50b805994e81e7a99e76b1fa0659073d64243e66f9f946515f1fc53c0af920"
+      },
+      {
+        "path": "schemas/merchants.graphql",
+        "sha256": "b331099e3d9f927bb412540960275ccfc8c4a1453772da058ffd6a3d81279920"
+      },
+      {
+        "path": "scripts/copy-assets.mjs",
+        "sha256": "95d1227e33102f25ed741e52a5975aaea60135e2769a3fa64fd8013e307fe8e8"
+      },
+      {
+        "path": "src/cancellation-check.ts",
+        "sha256": "24c63759a7e2241910ea60599a36e6f9c5680ffc2a0adcd9c507cc6a5077ad92"
+      },
+      {
+        "path": "src/cancellation-cli.ts",
+        "sha256": "97041b9a8b50757f438d01f0a3cdaa7cff74f907ceccbd002fbb593916abd2eb"
+      },
+      {
+        "path": "src/cancellation-evidence.ts",
+        "sha256": "24fc572083532c84149169688b23d3e223971fba4172d863142af4f5899a3cbf"
+      },
+      {
+        "path": "src/cancellation-experiment.ts",
+        "sha256": "fd572acc6fdf28f5e9e9167fc961d98b751df8a6f259e6c3a7b38cffc740a011"
+      },
+      {
+        "path": "src/cancellation-export-cli.ts",
+        "sha256": "2e52066af608d701d5c288b4c05cdc85d2f5759fc084ead6836cc88696f57907"
+      },
+      {
+        "path": "src/cancellation-export.ts",
+        "sha256": "08a0968fb787aa0ee2101e7ea15ca4e33201fea3323a90e97a7a6846e082043e"
+      },
+      {
+        "path": "src/cancellation-main.ts",
+        "sha256": "c35486bc4d906fd662ab884bc1b7af2a7ea01a4d903231274bcb32a53ddb7441"
+      },
+      {
+        "path": "src/cancellation-ui-server.ts",
+        "sha256": "4ba4c190a04df342b5b0a9d2f50c01475d2726116c2f6e7b2d8962b1b93121b4"
+      },
+      {
+        "path": "src/cancellation-work.ts",
+        "sha256": "f4af2fc7f4ccc169fa8f20af9110c0676f1c4ed06e4ef7c8e9522fa8f863e5ed"
+      },
+      {
+        "path": "src/check-contracts.ts",
+        "sha256": "5829b2f94cbff8d653f7fcfee92a48661b0129f0c10879e16aab076df931e3ad"
+      },
+      {
+        "path": "src/data.ts",
+        "sha256": "037ebec37d743a7d0236f24b1df7ca4c6e6fe073f20603a811d10f2dd416ddfe"
+      },
+      {
+        "path": "src/evolution-scenarios.ts",
+        "sha256": "16c75312e69e0632240edc40819b4f86dd8f7de192393fe1200fdad1fc021ca1"
+      },
+      {
+        "path": "src/http-server.ts",
+        "sha256": "5069eea1a9de921c90072de5f253337e2f0cb8eec607f1cf9eebbd1d3075127a"
+      },
+      {
+        "path": "src/lab.ts",
+        "sha256": "13a5d3641ae78bb64887d654759c57e49221d431077b1e5a6aa9d0a326ede4eb"
+      },
+      {
+        "path": "src/loaders.ts",
+        "sha256": "9a10c8ea0bfdb7fef778dc728b475000565caaf1b25158d365cd0d556616ebb5"
+      },
+      {
+        "path": "src/main.ts",
+        "sha256": "ef7aadf35e5d3c72fd3a102c035c0d382f1a5c587c42ce01f746155eab4df178"
+      },
+      {
+        "path": "src/run-scenarios.ts",
+        "sha256": "b99accc475c5f8d7b9537b5439c41632fea2238f05c64bd673b491d675bb3d2a"
+      },
+      {
+        "path": "src/scenarios.ts",
+        "sha256": "acb24a5fa7c0479a8f6df60cf7e8aa3f2c3ee8067f7fcdc126c006ff6df2fb58"
+      },
+      {
+        "path": "src/schema-impact-cli.ts",
+        "sha256": "7bc479e3bccf5851657751388f10fcc5bc4180c0d3661cd31b8031122031a460"
+      },
+      {
+        "path": "src/schema-impact.ts",
+        "sha256": "b302fa525af25de065a34e6aa44d56d5ac9f7dd070fc0e448fea096e263d9a69"
+      },
+      {
+        "path": "src/schema.ts",
+        "sha256": "b34e18f9541be85442719fdf7370388af26aebf630e42674864cdb670ccab278"
+      },
+      {
+        "path": "src/shutdown.ts",
+        "sha256": "0f47f16925318a9342c8e86dd64e59606b2760532d2c23fd68f43b22bf6ef465"
+      },
+      {
+        "path": "src/subgraphs.ts",
+        "sha256": "c40d0274550110624634882971b0dd2d1333bfa1d281a7aaf8f1590fabd4f22b"
+      },
+      {
+        "path": "src/ui-server.ts",
+        "sha256": "00a27d9725edc0b5f9a4cf2d7639dd59c575ae215cd28a766379e97fc7898256"
+      },
+      {
+        "path": "tests/cancellation-evidence.test.ts",
+        "sha256": "b5cc1be1887831d2155f45233a6d098649f6ffec10e790add3c222ac68a57486"
+      },
+      {
+        "path": "tests/cancellation-export.test.ts",
+        "sha256": "b2a7f59584d53b37824023b17c80f1d977fc88b6d0559e6f4ed67fe699c23b2f"
+      },
+      {
+        "path": "tests/cancellation.test.ts",
+        "sha256": "b2f6d651b94cdf955df598fcbca2686f60d51cf0dd2d06adf6e332c516ac476c"
+      },
+      {
+        "path": "tests/contracts.test.ts",
+        "sha256": "6aa28131b251665b9b45c21d1ff18213d547042583e78c40895c6c90a60fa988"
+      },
+      {
+        "path": "tests/integration.test.ts",
+        "sha256": "635ac64bd1a268e37483e12b82213834d4e7823c6d6015ac83d4b69b598a9681"
+      },
+      {
+        "path": "tests/schema-impact.test.ts",
+        "sha256": "51f896f6d73939fc1ba50d79a293e14c02c59c7a8bde9e63b3d14b4f1a32b63a"
+      },
+      {
+        "path": "tests/shutdown.test.ts",
+        "sha256": "cce94a02f0f4f9c36e6a9ed120fe8cd411c1590f0e9790237c19e40ad37ae1f0"
+      },
+      {
+        "path": "tests/ui-http.test.ts",
+        "sha256": "8f5a1e7092dfb780370435bcffe347519db99f1a3e9be1d525396600c2b6ee60"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "086114af1ee2901b25e603c2a1e7fcc49b4fa7630019e5cf3b8356e80f58e531"
+      }
+    ],
+    "git": {
+      "head": "ff47d27ac38071cf7d1c611492b55f657d8d0a27",
+      "branch": "experiment/cancellation-debt",
+      "dirty": false
+    }
+  },
+  "sourceUnchanged": true,
+  "passed": true,
+  "cases": [
+    {
+      "mode": "timeout-only",
+      "role": "counterexample",
+      "passed": true,
+      "checks": [
+        {
+          "name": "attempt-1-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-2-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-3-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-4-partial-data",
+          "passed": true
+        },
+        {
+          "name": "raw-event-bookkeeping",
+          "passed": true
+        },
+        {
+          "name": "all-work-drained",
+          "passed": true
+        },
+        {
+          "name": "timeouts-leave-overlapping-work",
+          "passed": true
+        }
+      ],
+      "responses": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 12.11,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 7.1,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 162.72,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 2.15,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.83,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 173.5,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 3,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 15.18,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 3.31,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 165.64,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 4,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 13.78,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.75,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 165.7,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "afterCallers": {
+        "mode": "timeout-only",
+        "capacity": null,
+        "workMs": 1000,
+        "active": 4,
+        "permits": 4,
+        "maxActive": 4,
+        "maxPermits": 4,
+        "started": 4,
+        "completed": 0,
+        "cancelled": 0,
+        "rejected": 0,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 147.99,
+            "kind": "admitted",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 307.57,
+            "kind": "caller-completed",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 309.1,
+            "kind": "cancel-requested",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 315.94,
+            "kind": "admitted",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 488.47,
+            "kind": "caller-completed",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 489.5,
+            "kind": "cancel-requested",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 508.67,
+            "kind": "admitted",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": 3,
+            "active": 3,
+            "permits": 3
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 673.51,
+            "kind": "caller-completed",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": null,
+            "active": 3,
+            "permits": 3
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 674.29,
+            "kind": "cancel-requested",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": 3,
+            "active": 3,
+            "permits": 3,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 691.84,
+            "kind": "admitted",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": 4,
+            "active": 4,
+            "permits": 4
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 856.6,
+            "kind": "caller-completed",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": null,
+            "active": 4,
+            "permits": 4
+          }
+        ]
+      },
+      "final": {
+        "mode": "timeout-only",
+        "capacity": null,
+        "workMs": 1000,
+        "active": 0,
+        "permits": 0,
+        "maxActive": 4,
+        "maxPermits": 4,
+        "started": 4,
+        "completed": 4,
+        "cancelled": 0,
+        "rejected": 0,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 147.99,
+            "kind": "admitted",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 307.57,
+            "kind": "caller-completed",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 309.1,
+            "kind": "cancel-requested",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 315.94,
+            "kind": "admitted",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 488.47,
+            "kind": "caller-completed",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 489.5,
+            "kind": "cancel-requested",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 508.67,
+            "kind": "admitted",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": 3,
+            "active": 3,
+            "permits": 3
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 673.51,
+            "kind": "caller-completed",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": null,
+            "active": 3,
+            "permits": 3
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 674.29,
+            "kind": "cancel-requested",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": 3,
+            "active": 3,
+            "permits": 3,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 691.84,
+            "kind": "admitted",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": 4,
+            "active": 4,
+            "permits": 4
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 856.6,
+            "kind": "caller-completed",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": null,
+            "active": 4,
+            "permits": 4
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 857,
+            "kind": "cancel-requested",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": 4,
+            "active": 4,
+            "permits": 4,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 1157.93,
+            "kind": "completed",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": 1,
+            "active": 3,
+            "permits": 4
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 1158.03,
+            "kind": "permit-released",
+            "requestId": "7dc3a1d1-fde2-4e79-8a8e-5e4f986e041c",
+            "jobId": 1,
+            "active": 3,
+            "permits": 3,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 15,
+            "elapsedMs": 1321.67,
+            "kind": "completed",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": 2,
+            "active": 2,
+            "permits": 3
+          },
+          {
+            "sequence": 16,
+            "elapsedMs": 1321.69,
+            "kind": "permit-released",
+            "requestId": "e5a5325e-6560-4ffc-b550-296c899990b6",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 17,
+            "elapsedMs": 1521,
+            "kind": "completed",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": 3,
+            "active": 1,
+            "permits": 2
+          },
+          {
+            "sequence": 18,
+            "elapsedMs": 1521.03,
+            "kind": "permit-released",
+            "requestId": "f8f1b00b-6f49-4202-9c78-d942541536e3",
+            "jobId": 3,
+            "active": 1,
+            "permits": 1,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 19,
+            "elapsedMs": 1705.99,
+            "kind": "completed",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": 4,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 20,
+            "elapsedMs": 1706,
+            "kind": "permit-released",
+            "requestId": "4dd6fe8c-7ef6-48e9-a6a9-55ab5d84b5f0",
+            "jobId": 4,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          }
+        ]
+      },
+      "analysis": {
+        "bookkeepingValid": true,
+        "violations": [],
+        "reconstructed": {
+          "active": 0,
+          "permits": 0,
+          "maxActive": 4,
+          "maxPermits": 4,
+          "started": 4,
+          "completed": 4,
+          "cancelled": 0,
+          "rejected": 0
+        },
+        "permitLifetimeValid": true,
+        "earlyReleases": [],
+        "physicalBoundSatisfied": null,
+        "permitCounterBoundSatisfied": null,
+        "drained": true
+      }
+    },
+    {
+      "mode": "early-release",
+      "role": "counterexample",
+      "passed": true,
+      "checks": [
+        {
+          "name": "attempt-1-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-2-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-3-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-4-partial-data",
+          "passed": true
+        },
+        {
+          "name": "raw-event-bookkeeping",
+          "passed": true
+        },
+        {
+          "name": "all-work-drained",
+          "passed": true
+        },
+        {
+          "name": "permit-count-can-lie-about-work",
+          "passed": true
+        }
+      ],
+      "responses": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 2.27,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 3.1,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 174.83,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 14.69,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.95,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 165.92,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 3,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 11.6,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.38,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 167.54,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 4,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 14.16,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.03,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 167.26,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "afterCallers": {
+        "mode": "early-release",
+        "capacity": 2,
+        "workMs": 1000,
+        "active": 4,
+        "permits": 1,
+        "maxActive": 4,
+        "maxPermits": 1,
+        "started": 4,
+        "completed": 0,
+        "cancelled": 0,
+        "rejected": 0,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 41.7,
+            "kind": "admitted",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 215.41,
+            "kind": "caller-completed",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 216.57,
+            "kind": "cancel-requested",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 216.57,
+            "kind": "permit-released",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 1,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 235.38,
+            "kind": "admitted",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 1
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 400.02,
+            "kind": "caller-completed",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": null,
+            "active": 2,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 401.02,
+            "kind": "cancel-requested",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 401.02,
+            "kind": "permit-released",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 415.91,
+            "kind": "admitted",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 3,
+            "permits": 1
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 582.94,
+            "kind": "caller-completed",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": null,
+            "active": 3,
+            "permits": 1
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 583.7,
+            "kind": "cancel-requested",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 3,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 583.71,
+            "kind": "permit-released",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 3,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 600.94,
+            "kind": "admitted",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": 4,
+            "active": 4,
+            "permits": 1
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 768.48,
+            "kind": "caller-completed",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": null,
+            "active": 4,
+            "permits": 1
+          }
+        ]
+      },
+      "final": {
+        "mode": "early-release",
+        "capacity": 2,
+        "workMs": 1000,
+        "active": 0,
+        "permits": 0,
+        "maxActive": 4,
+        "maxPermits": 1,
+        "started": 4,
+        "completed": 4,
+        "cancelled": 0,
+        "rejected": 0,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 41.7,
+            "kind": "admitted",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 215.41,
+            "kind": "caller-completed",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 216.57,
+            "kind": "cancel-requested",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 216.57,
+            "kind": "permit-released",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 1,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 235.38,
+            "kind": "admitted",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 1
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 400.02,
+            "kind": "caller-completed",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": null,
+            "active": 2,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 401.02,
+            "kind": "cancel-requested",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 401.02,
+            "kind": "permit-released",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 415.91,
+            "kind": "admitted",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 3,
+            "permits": 1
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 582.94,
+            "kind": "caller-completed",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": null,
+            "active": 3,
+            "permits": 1
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 583.7,
+            "kind": "cancel-requested",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 3,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 583.71,
+            "kind": "permit-released",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 3,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 600.94,
+            "kind": "admitted",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": 4,
+            "active": 4,
+            "permits": 1
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 768.48,
+            "kind": "caller-completed",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": null,
+            "active": 4,
+            "permits": 1
+          },
+          {
+            "sequence": 15,
+            "elapsedMs": 768.69,
+            "kind": "cancel-requested",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": 4,
+            "active": 4,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 16,
+            "elapsedMs": 768.69,
+            "kind": "permit-released",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": 4,
+            "active": 4,
+            "permits": 0,
+            "reason": "incorrect-caller-lifetime"
+          },
+          {
+            "sequence": 17,
+            "elapsedMs": 1048.62,
+            "kind": "completed",
+            "requestId": "ab632ea7-ded6-4c01-bd45-d4e531e73636",
+            "jobId": 1,
+            "active": 3,
+            "permits": 0
+          },
+          {
+            "sequence": 18,
+            "elapsedMs": 1248.03,
+            "kind": "completed",
+            "requestId": "bbae17fb-9763-4345-868e-4a6775334b08",
+            "jobId": 2,
+            "active": 2,
+            "permits": 0
+          },
+          {
+            "sequence": 19,
+            "elapsedMs": 1416.54,
+            "kind": "completed",
+            "requestId": "68ff15f3-fcb0-402a-8259-67c31e8d9767",
+            "jobId": 3,
+            "active": 1,
+            "permits": 0
+          },
+          {
+            "sequence": 20,
+            "elapsedMs": 1612.75,
+            "kind": "completed",
+            "requestId": "ae6ec2e6-2f2c-4a61-92f1-8e82462d780a",
+            "jobId": 4,
+            "active": 0,
+            "permits": 0
+          }
+        ]
+      },
+      "analysis": {
+        "bookkeepingValid": true,
+        "violations": [],
+        "reconstructed": {
+          "active": 0,
+          "permits": 0,
+          "maxActive": 4,
+          "maxPermits": 1,
+          "started": 4,
+          "completed": 4,
+          "cancelled": 0,
+          "rejected": 0
+        },
+        "permitLifetimeValid": false,
+        "earlyReleases": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "physicalBoundSatisfied": false,
+        "permitCounterBoundSatisfied": true,
+        "drained": true
+      }
+    },
+    {
+      "mode": "admission-only",
+      "role": "mitigation",
+      "passed": true,
+      "checks": [
+        {
+          "name": "attempt-1-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-2-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-3-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-4-partial-data",
+          "passed": true
+        },
+        {
+          "name": "raw-event-bookkeeping",
+          "passed": true
+        },
+        {
+          "name": "all-work-drained",
+          "passed": true
+        },
+        {
+          "name": "noncooperative-work-stays-bounded-but-remains-active",
+          "passed": true
+        }
+      ],
+      "responses": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 2.12,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.96,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 165.93,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 1.2,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 1.86,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 162.89,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 3,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "Synthetic inventory work was not admitted.",
+                "path": [
+                  "products",
+                  0,
+                  "availability"
+                ],
+                "extensions": {
+                  "code": "INVENTORY_BUSY",
+                  "serviceName": "inventory"
+                }
+              },
+              {
+                "message": "Synthetic inventory work was not admitted.",
+                "path": [
+                  "products",
+                  1,
+                  "availability"
+                ],
+                "extensions": {
+                  "code": "INVENTORY_BUSY",
+                  "serviceName": "inventory"
+                }
+              },
+              {
+                "message": "Synthetic inventory work was not admitted.",
+                "path": [
+                  "products",
+                  2,
+                  "availability"
+                ],
+                "extensions": {
+                  "code": "INVENTORY_BUSY",
+                  "serviceName": "inventory"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "c651196c-6894-4674-9b7e-1faeb39085ed",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 14.35,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 2.78,
+                    "outcome": "graphql-error",
+                    "batches": [
+                      {
+                        "source": "inventory",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 3.26,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 4,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "Synthetic inventory work was not admitted.",
+                "path": [
+                  "products",
+                  0,
+                  "availability"
+                ],
+                "extensions": {
+                  "code": "INVENTORY_BUSY",
+                  "serviceName": "inventory"
+                }
+              },
+              {
+                "message": "Synthetic inventory work was not admitted.",
+                "path": [
+                  "products",
+                  1,
+                  "availability"
+                ],
+                "extensions": {
+                  "code": "INVENTORY_BUSY",
+                  "serviceName": "inventory"
+                }
+              },
+              {
+                "message": "Synthetic inventory work was not admitted.",
+                "path": [
+                  "products",
+                  2,
+                  "availability"
+                ],
+                "extensions": {
+                  "code": "INVENTORY_BUSY",
+                  "serviceName": "inventory"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "f546ad2a-b666-4c2a-85e9-af152d423dc5",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 17.1,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 15.83,
+                    "outcome": "graphql-error",
+                    "batches": [
+                      {
+                        "source": "inventory",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 16.12,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "afterCallers": {
+        "mode": "admission-only",
+        "capacity": 2,
+        "workMs": 1000,
+        "active": 2,
+        "permits": 2,
+        "maxActive": 2,
+        "maxPermits": 2,
+        "started": 2,
+        "completed": 0,
+        "cancelled": 0,
+        "rejected": 2,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 37.85,
+            "kind": "admitted",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 202.61,
+            "kind": "caller-completed",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 203.66,
+            "kind": "cancel-requested",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 207.39,
+            "kind": "admitted",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 369.99,
+            "kind": "caller-completed",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 370.69,
+            "kind": "cancel-requested",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 387.72,
+            "kind": "rejected",
+            "requestId": "c651196c-6894-4674-9b7e-1faeb39085ed",
+            "jobId": null,
+            "active": 2,
+            "permits": 2,
+            "reason": "admission-full"
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 390.01,
+            "kind": "caller-completed",
+            "requestId": "c651196c-6894-4674-9b7e-1faeb39085ed",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 434.19,
+            "kind": "rejected",
+            "requestId": "f546ad2a-b666-4c2a-85e9-af152d423dc5",
+            "jobId": null,
+            "active": 2,
+            "permits": 2,
+            "reason": "admission-full"
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 435.84,
+            "kind": "caller-completed",
+            "requestId": "f546ad2a-b666-4c2a-85e9-af152d423dc5",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          }
+        ]
+      },
+      "final": {
+        "mode": "admission-only",
+        "capacity": 2,
+        "workMs": 1000,
+        "active": 0,
+        "permits": 0,
+        "maxActive": 2,
+        "maxPermits": 2,
+        "started": 2,
+        "completed": 2,
+        "cancelled": 0,
+        "rejected": 2,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 37.85,
+            "kind": "admitted",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 202.61,
+            "kind": "caller-completed",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 203.66,
+            "kind": "cancel-requested",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 207.39,
+            "kind": "admitted",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 369.99,
+            "kind": "caller-completed",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 370.69,
+            "kind": "cancel-requested",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": 2,
+            "active": 2,
+            "permits": 2,
+            "reason": "peer-disconnected"
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 387.72,
+            "kind": "rejected",
+            "requestId": "c651196c-6894-4674-9b7e-1faeb39085ed",
+            "jobId": null,
+            "active": 2,
+            "permits": 2,
+            "reason": "admission-full"
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 390.01,
+            "kind": "caller-completed",
+            "requestId": "c651196c-6894-4674-9b7e-1faeb39085ed",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 434.19,
+            "kind": "rejected",
+            "requestId": "f546ad2a-b666-4c2a-85e9-af152d423dc5",
+            "jobId": null,
+            "active": 2,
+            "permits": 2,
+            "reason": "admission-full"
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 435.84,
+            "kind": "caller-completed",
+            "requestId": "f546ad2a-b666-4c2a-85e9-af152d423dc5",
+            "jobId": null,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 1052.63,
+            "kind": "completed",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": 1,
+            "active": 1,
+            "permits": 2
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 1052.65,
+            "kind": "permit-released",
+            "requestId": "1ddfbe54-9aa5-499c-b77e-4f6accb4f5be",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 1218.89,
+            "kind": "completed",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": 2,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 1218.9,
+            "kind": "permit-released",
+            "requestId": "b6047d5c-3119-49a2-b2ca-2a7d2080c28b",
+            "jobId": 2,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          }
+        ]
+      },
+      "analysis": {
+        "bookkeepingValid": true,
+        "violations": [],
+        "reconstructed": {
+          "active": 0,
+          "permits": 0,
+          "maxActive": 2,
+          "maxPermits": 2,
+          "started": 2,
+          "completed": 2,
+          "cancelled": 0,
+          "rejected": 2
+        },
+        "permitLifetimeValid": true,
+        "earlyReleases": [],
+        "physicalBoundSatisfied": true,
+        "permitCounterBoundSatisfied": true,
+        "drained": true
+      }
+    },
+    {
+      "mode": "cooperative",
+      "role": "mitigation",
+      "passed": true,
+      "checks": [
+        {
+          "name": "attempt-1-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-2-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-3-partial-data",
+          "passed": true
+        },
+        {
+          "name": "attempt-4-partial-data",
+          "passed": true
+        },
+        {
+          "name": "raw-event-bookkeeping",
+          "passed": true
+        },
+        {
+          "name": "all-work-drained",
+          "passed": true
+        },
+        {
+          "name": "cooperative-work-stops-and-keeps-permit-until-settlement",
+          "passed": true
+        }
+      ],
+      "responses": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 3.02,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 5.51,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 163.32,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 12.72,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 2.25,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 166.97,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 3,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 14.35,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 1.88,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 161.21,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "attempt": 4,
+          "status": 200,
+          "body": {
+            "errors": [
+              {
+                "message": "inventory exceeded its response deadline.",
+                "extensions": {
+                  "code": "SUBGRAPH_TIMEOUT"
+                }
+              }
+            ],
+            "data": {
+              "products": [
+                {
+                  "sku": "demo-ceramic",
+                  "name": "Orbit Ceramic Cup",
+                  "price": {
+                    "amountMinor": 2400,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-notebook",
+                  "name": "Field Notes Journal",
+                  "price": {
+                    "amountMinor": 1800,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-north",
+                    "name": "North Studio",
+                    "city": "Example City"
+                  },
+                  "availability": null
+                },
+                {
+                  "sku": "demo-lamp",
+                  "name": "Arc Desk Lamp",
+                  "price": {
+                    "amountMinor": 6900,
+                    "currency": "USD"
+                  },
+                  "merchant": {
+                    "id": "merchant-east",
+                    "name": "East Workshop",
+                    "city": "Sample Town"
+                  },
+                  "availability": null
+                }
+              ]
+            },
+            "extensions": {
+              "lab": {
+                "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+                "scenario": "inventory-timeout",
+                "fetches": [
+                  {
+                    "service": "catalog",
+                    "durationMs": 12.58,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "catalog",
+                        "keys": [
+                          "demo-ceramic",
+                          "demo-notebook",
+                          "demo-lamp"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "merchants",
+                    "durationMs": 1.98,
+                    "outcome": "ok",
+                    "batches": [
+                      {
+                        "source": "merchants",
+                        "keys": [
+                          "merchant-north",
+                          "merchant-east"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "service": "inventory",
+                    "durationMs": 173.11,
+                    "outcome": "transport-error",
+                    "batches": []
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "afterCallers": {
+        "mode": "cooperative",
+        "capacity": 2,
+        "workMs": 1000,
+        "active": 0,
+        "permits": 0,
+        "maxActive": 1,
+        "maxPermits": 1,
+        "started": 4,
+        "completed": 0,
+        "cancelled": 4,
+        "rejected": 0,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 40.57,
+            "kind": "admitted",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 200.01,
+            "kind": "cancel-requested",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 200.15,
+            "kind": "cancelled",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 200.18,
+            "kind": "permit-released",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 200.95,
+            "kind": "caller-completed",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 217.34,
+            "kind": "admitted",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 381.95,
+            "kind": "cancel-requested",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 382.03,
+            "kind": "cancelled",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 382.08,
+            "kind": "permit-released",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 383.48,
+            "kind": "caller-completed",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 401.08,
+            "kind": "admitted",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 560.18,
+            "kind": "cancel-requested",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 560.25,
+            "kind": "cancelled",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 560.29,
+            "kind": "permit-released",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 15,
+            "elapsedMs": 561.55,
+            "kind": "caller-completed",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 16,
+            "elapsedMs": 577.25,
+            "kind": "admitted",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 17,
+            "elapsedMs": 748.09,
+            "kind": "cancel-requested",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 18,
+            "elapsedMs": 748.17,
+            "kind": "cancelled",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 19,
+            "elapsedMs": 748.26,
+            "kind": "permit-released",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 20,
+            "elapsedMs": 749.67,
+            "kind": "caller-completed",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          }
+        ]
+      },
+      "final": {
+        "mode": "cooperative",
+        "capacity": 2,
+        "workMs": 1000,
+        "active": 0,
+        "permits": 0,
+        "maxActive": 1,
+        "maxPermits": 1,
+        "started": 4,
+        "completed": 0,
+        "cancelled": 4,
+        "rejected": 0,
+        "events": [
+          {
+            "sequence": 1,
+            "elapsedMs": 40.57,
+            "kind": "admitted",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 2,
+            "elapsedMs": 200.01,
+            "kind": "cancel-requested",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 3,
+            "elapsedMs": 200.15,
+            "kind": "cancelled",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 4,
+            "elapsedMs": 200.18,
+            "kind": "permit-released",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": 1,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 5,
+            "elapsedMs": 200.95,
+            "kind": "caller-completed",
+            "requestId": "6a50d978-6c70-450d-a5f1-dbee7f104cc1",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 6,
+            "elapsedMs": 217.34,
+            "kind": "admitted",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "elapsedMs": 381.95,
+            "kind": "cancel-requested",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 8,
+            "elapsedMs": 382.03,
+            "kind": "cancelled",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 9,
+            "elapsedMs": 382.08,
+            "kind": "permit-released",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": 2,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 10,
+            "elapsedMs": 383.48,
+            "kind": "caller-completed",
+            "requestId": "36001481-c436-40a0-bdbf-7d8961faac73",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 11,
+            "elapsedMs": 401.08,
+            "kind": "admitted",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 12,
+            "elapsedMs": 560.18,
+            "kind": "cancel-requested",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 13,
+            "elapsedMs": 560.25,
+            "kind": "cancelled",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 14,
+            "elapsedMs": 560.29,
+            "kind": "permit-released",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": 3,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 15,
+            "elapsedMs": 561.55,
+            "kind": "caller-completed",
+            "requestId": "ffbb08fd-f0ac-4867-ba16-e91f66d04bdc",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 16,
+            "elapsedMs": 577.25,
+            "kind": "admitted",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 17,
+            "elapsedMs": 748.09,
+            "kind": "cancel-requested",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 1,
+            "permits": 1,
+            "reason": "deadline"
+          },
+          {
+            "sequence": 18,
+            "elapsedMs": 748.17,
+            "kind": "cancelled",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 0,
+            "permits": 1
+          },
+          {
+            "sequence": 19,
+            "elapsedMs": 748.26,
+            "kind": "permit-released",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": 4,
+            "active": 0,
+            "permits": 0,
+            "reason": "underlying-work-settled"
+          },
+          {
+            "sequence": 20,
+            "elapsedMs": 749.67,
+            "kind": "caller-completed",
+            "requestId": "b435cfe2-afbc-4e8b-a843-9fd7033472d6",
+            "jobId": null,
+            "active": 0,
+            "permits": 0
+          }
+        ]
+      },
+      "analysis": {
+        "bookkeepingValid": true,
+        "violations": [],
+        "reconstructed": {
+          "active": 0,
+          "permits": 0,
+          "maxActive": 1,
+          "maxPermits": 1,
+          "started": 4,
+          "completed": 0,
+          "cancelled": 4,
+          "rejected": 0
+        },
+        "permitLifetimeValid": true,
+        "earlyReleases": [],
+        "physicalBoundSatisfied": true,
+        "permitCounterBoundSatisfied": true,
+        "drained": true
+      }
+    }
+  ],
+  "limits": [
+    "Real HTTP/socket cancellation surrounds synthetic timer-held work. This does not demonstrate cancellation of a database query, CPU task or external side effect.",
+    "Response deadlines and work durations are configured fixtures, not observed speed improvements or representative traffic.",
+    "Admission limits belong to this one inventory process. No global or cross-replica capacity bound is claimed.",
+    "Absolute deadlines use this shared host clock. Clock skew and authenticated cross-service deadline policy are outside this lab.",
+    "Cancellation is explicit and cooperative. The admission-only control deliberately ignores it and retains permits until real settlement.",
+    "The raw-event checker verifies recorded transitions, not uninstrumented work. Source hashes aid reproduction; they are not execution attestations."
+  ]
+}
