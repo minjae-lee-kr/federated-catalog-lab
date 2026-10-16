@@ -10,9 +10,13 @@ pnpm verify
 pnpm debt
 # Optional Korean/English interface, http://127.0.0.1:4182/
 pnpm debt:ui
+# Read-only static capture; requires a clean, committed local revision
+pnpm debt:export
 ```
 
 `pnpm debt` writes `.local/cancellation-debt.json`: every GraphQL response, ordered work transitions, independent checks, runtime metadata, a source manifest and a before/after source-drift check. The UI starts fresh experiments and can download their evidence. There is no prerecorded result behind the screen.
+
+`pnpm debt:export` is separate from the live UI. It requires a clean Git revision, captures a fresh successful run, checks source/head stability again after rendering, and writes `.local/cancellation-export/`. Open `index.html` directly or host that directory as static files. It contains relative assets, `report.json`, a matching `report-data.js` for offline rendering, and `export.json` with file hashes. The screen explicitly labels the saved run, capture time, revision, source fingerprint and limitations in Korean or English. Its run button and live transport script are absent; no API is required, and its content policy blocks network connections. Exporting does not publish anything. The raw JSON remains unchanged; hashes support reproduction and file integrity, not execution attestation.
 
 ## The counterexample
 

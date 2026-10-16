@@ -4,6 +4,8 @@ This experimental branch adds a focused question: **can a concurrency limiter re
 
 실험 브랜치에서는 **실행 허가가 1개로 보이는데 실제 작업은 4개가 남는 상황**을 재현합니다. `pnpm debt`로 원본 근거를 수집하거나 `pnpm debt:ui`로 한국어·영문 화면을 실행하세요. [실험 설명](docs/cancellation-debt.md#한국어)에서 취소가 해결하는 범위와 해결하지 못하는 범위를 확인할 수 있습니다.
 
+`pnpm debt:export` captures a fresh run from a clean Git revision into `.local/cancellation-export/`. The Korean/English static page is explicitly labeled as a saved, read-only run and works without an API. It includes raw JSON, capture time, source fingerprint and file hashes. It does not publish the files. / 커밋된 소스에서 새로 실행한 결과를 읽기 전용 정적 페이지와 원본 JSON으로 저장합니다.
+
 **One query. Three domains. Failures you can inspect.**
 
 A small Apollo Federation server project that makes entity composition, request-scoped batching, partial responses and API compatibility tangible. It includes a local interactive explorer, real HTTP subgraphs and tests that deliberately break the graph.

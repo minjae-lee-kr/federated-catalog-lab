@@ -8,6 +8,7 @@ const assets: Record<string, [string, string]> = {
   '/': ['debt.html', 'text/html; charset=utf-8'],
   '/debt.css': ['debt.css', 'text/css; charset=utf-8'],
   '/debt.js': ['debt.js', 'text/javascript; charset=utf-8'],
+  '/debt-live.js': ['debt-live.js', 'text/javascript; charset=utf-8'],
 };
 export async function startCancellationUi(port = 0) {
   let active: Promise<unknown> | undefined;
