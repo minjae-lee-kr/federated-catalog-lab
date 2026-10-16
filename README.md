@@ -97,6 +97,8 @@ The suite covers real cross-subgraph data, duplicate/unknown keys, request cache
 
 `schemas/api-baseline.graphql` is deliberately checked in. The contract command never updates it automatically: an intentional contract change requires a reviewed baseline update. Named operations cover the bundled clients, not every possible consumer. Semantic changes and authorization changes remain outside schema validation.
 
+Run `pnpm impact` to compare seven in-memory schema changes and identify the affected named consumers. For example, removing `description` invalidates only `CatalogOnly`, while weakening `name` nullability breaks the API contract even though both queries still validate. `pnpm impact --format json` produces a structured report. See [schema evolution and consumer impact](docs/schema-evolution.md) for the distinctions and limits; this experiment does not modify or deploy a schema.
+
 ## Scope and limits
 
 - Read-only queries, three fixtures, one process, no persistence, authentication, authorization or transactions.

@@ -2,13 +2,22 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { composeServices } from '@apollo/composition';
 import { Supergraph } from '@apollo/federation-internals';
 import { parse, validate, findBreakingChanges, findDangerousChanges, printSchema } from 'graphql';
-import type { GraphQLSchema } from 'graphql';
+import type { GraphQLError, GraphQLSchema } from 'graphql';
 
 export const serviceNames = ['catalog', 'inventory', 'merchants'] as const;
 export type ServiceName = typeof serviceNames[number];
 export const schemaSources = Object.fromEntries(serviceNames.map(name => [
   name, readFileSync(new URL(`../schemas/${name}.graphql`, import.meta.url), 'utf8'),
 ])) as Record<ServiceName, string>;
+
+export class CompositionError extends Error {
+  readonly issues: readonly GraphQLError[];
+  constructor(issues: readonly GraphQLError[]) {
+    super(`Composition failed:\n${issues.map(error => error.message).join('\n')}`);
+    this.name = 'CompositionError';
+    this.issues = issues;
+  }
+}
 
 export function composeGraph(
   sources: Record<ServiceName, string> = schemaSources,
@@ -19,7 +28,7 @@ export function composeGraph(
     url: urls[name] ?? `http://127.0.0.1:${4011 + serviceNames.indexOf(name)}/`,
     typeDefs: parse(sources[name]),
   })));
-  if (result.errors) throw new Error(`Composition failed:\n${result.errors.map(error => error.message).join('\n')}`);
+  if (result.errors) throw new CompositionError(result.errors);
   return {
     supergraphSdl: result.supergraphSdl,
     apiSchema: Supergraph.build(result.supergraphSdl).apiSchema().toGraphQLJSSchema(),

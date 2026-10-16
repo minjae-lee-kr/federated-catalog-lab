@@ -15,6 +15,7 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.ts",
     "contracts": "node src/check-contracts.ts",
+    "impact": "node src/schema-impact-cli.ts",
     "demo": "node src/run-scenarios.ts",
     "verify": "pnpm typecheck && pnpm contracts && pnpm test && pnpm build"
   },
