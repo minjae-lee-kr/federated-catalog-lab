@@ -1,0 +1,9 @@
+query CatalogCards($skus: [ID!]!) {
+  products(skus: $skus) {
+    sku
+    name
+    price { amountMinor currency }
+    merchant { id name city }
+    availability { status quantity }
+  }
+}

@@ -1,0 +1,41 @@
+type Availability {
+  status: StockStatus!
+  quantity: Int!
+}
+
+type Merchant {
+  id: ID!
+  name: String!
+  city: String!
+}
+
+type Money {
+  """Integer minor units; never a floating-point currency value."""
+  amountMinor: Int!
+  currency: String!
+}
+
+type Product {
+  sku: ID!
+  name: String!
+  description: String!
+  price: Money!
+  merchant: Merchant
+
+  """
+  Null means inventory could not be established, never that it is sold out.
+  """
+  availability: Availability
+}
+
+type Query {
+  """
+  Returns products in requested order. Unknown SKUs are null; at most 12 SKUs.
+  """
+  products(skus: [ID!]!): [Product]!
+}
+
+enum StockStatus {
+  IN_STOCK
+  SOLD_OUT
+}

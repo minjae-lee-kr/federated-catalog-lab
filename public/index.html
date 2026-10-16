@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Federated Catalog Lab — One graph. Honest failures.</title>
+    <meta
+      name="description"
+      content="An interactive, local Apollo Federation lab with three synthetic subgraphs, request-scoped batching and observable partial failure."
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="/" class="brand"
+        ><span class="mark" aria-hidden="true">◈</span> FIELDWORK
+        <span class="brand-light">/ FEDERATION</span></a
+      ><span class="local"
+        ><span aria-hidden="true"></span> LOCAL LAB · SYNTHETIC DATA</span
+      >
+    </header>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">GRAPHQL API ENGINEERING / 02</p>
+        <h1>One graph.<br /><span>Honest failures.</span></h1>
+        <p class="lede">
+          Three domains meet in a single product query. Interrupt one dependency
+          and inspect exactly what survives.
+        </p>
+        <div class="tags">
+          <span>Apollo Federation 2</span><span>Request-scoped batching</span
+          ><span>Executable contracts</span>
+        </div>
+      </section>
+      <section class="workspace" aria-label="Federation experiment">
+        <div class="panel controls">
+          <div class="panel-heading">
+            <h2>01 / Set the conditions</h2>
+            <span class="micro">REAL HTTP · IN-MEMORY FIXTURES</span>
+          </div>
+          <div class="control-grid">
+            <div>
+              <label for="operation">Operation</label
+              ><select id="operation">
+                <option value="CatalogCards.graphql">
+                  Catalog cards · three domains
+                </option>
+                <option value="CatalogOnly.graphql">
+                  Catalog only · one domain
+                </option>
+              </select>
+            </div>
+            <div>
+              <label for="scenario">Inventory scenario</label
+              ><select id="scenario">
+                <option value="healthy">Healthy</option>
+                <option value="inventory-error">Dependency error</option>
+                <option value="inventory-timeout">Response timeout</option>
+                <option value="missing-inventory">Missing record</option>
+              </select>
+            </div>
+            <div class="run-controls">
+              <label class="check"
+                ><input id="duplicates" type="checkbox" /> Repeat one SKU</label
+              ><button id="run" type="button">
+                Run query <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+          <p id="scenario-note" class="note">
+            All three subgraphs answer. Look for one inventory batch and two
+            unique merchant keys.
+          </p>
+        </div>
+        <div class="split">
+          <section class="panel query-panel">
+            <div class="panel-heading">
+              <h2>02 / Send one query</h2>
+              <span class="micro">NAMED OPERATION</span>
+            </div>
+            <pre id="query" tabindex="0" aria-label="GraphQL query">
+Loading operation…</pre
+            >
+            <div class="query-foot">
+              The same query runs against the local Apollo gateway.<br />Inventory
+              is nullable by design. Unknown is never “sold out”.
+            </div>
+          </section>
+          <section class="panel trace-panel">
+            <div class="panel-heading">
+              <h2>03 / Follow the work</h2>
+              <span class="micro" id="fetch-count">READY</span>
+            </div>
+            <div
+              id="graph"
+              class="graph"
+              aria-label="Catalog resolves first, then inventory and merchants"
+            >
+              <div class="graph-root">Gateway</div>
+              <span class="graph-arrow" aria-hidden="true">↓</span>
+              <div class="graph-root secondary" data-domain="catalog">
+                Catalog
+              </div>
+              <span id="branches" class="graph-arrow" aria-hidden="true"
+                >↙ &nbsp; ↘</span
+              >
+              <div class="graph-children">
+                <span data-domain="inventory">Inventory</span
+                ><span data-domain="merchants">Merchants</span>
+              </div>
+            </div>
+            <div id="trace" class="trace-list">
+              <p class="empty">
+                Run a query to inspect dependency calls and loader batches.
+              </p>
+            </div>
+            <p class="trace-foot">
+              Durations are observations from this local run, not benchmarks. A
+              timed-out response cannot report its batch details.
+            </p>
+          </section>
+        </div>
+        <section class="results">
+          <div class="results-heading">
+            <h2>04 / Read the product result</h2>
+            <p id="status" role="status" aria-live="polite">
+              Choose a condition and run the query.
+            </p>
+          </div>
+          <div id="cards" class="cards"></div>
+          <details class="panel raw">
+            <summary>
+              Inspect raw GraphQL response <span aria-hidden="true">+</span>
+            </summary>
+            <pre id="response" tabindex="0">No response yet.</pre>
+          </details>
+        </section>
+      </section>
+      <section class="principles">
+        <article>
+          <span>01</span>
+          <h3>Compose ownership</h3>
+          <p>
+            Catalog owns product identity. Inventory extends the entity.
+            Merchant details resolve through a second entity reference.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Keep uncertainty visible</h3>
+          <p>
+            A missing record, sold-out stock and an unavailable dependency have
+            different meanings. The interface preserves that distinction.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Make the contract executable</h3>
+          <p>
+            Composition, API schema diffs and named operation validation run
+            before integration tests. Each catches a different class of
+            breakage.
+          </p>
+        </article>
+      </section>
+      <footer>
+        <strong>A small lab, with inspectable decisions.</strong>
+        <p>
+          Original personal project. All records, faults and timing thresholds
+          are synthetic. No production architecture or performance claims.
+        </p>
+        <p lang="ko">
+          가상 데이터로 엔티티 결합, 요청 단위 배치, 부분 실패, 스키마 호환성을
+          직접 검증하는 개인 실험입니다.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>

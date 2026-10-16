@@ -1,0 +1,7 @@
+query CatalogOnly($skus: [ID!]!) {
+  products(skus: $skus) {
+    sku
+    name
+    description
+  }
+}

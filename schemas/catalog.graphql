@@ -1,0 +1,25 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])
+
+type Query {
+  "Returns products in requested order. Unknown SKUs are null; at most 12 SKUs."
+  products(skus: [ID!]!): [Product]!
+}
+
+type Product @key(fields: "sku") {
+  sku: ID!
+  name: String!
+  description: String!
+  price: Money!
+  merchant: Merchant
+}
+
+type Money {
+  "Integer minor units; never a floating-point currency value."
+  amountMinor: Int!
+  currency: String!
+}
+
+type Merchant @key(fields: "id", resolvable: false) {
+  id: ID!
+}

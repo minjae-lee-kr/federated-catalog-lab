@@ -1,0 +1,18 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])
+
+type Product @key(fields: "sku") {
+  sku: ID!
+  "Null means inventory could not be established, never that it is sold out."
+  availability: Availability
+}
+
+type Availability {
+  status: StockStatus!
+  quantity: Int!
+}
+
+enum StockStatus {
+  IN_STOCK
+  SOLD_OUT
+}

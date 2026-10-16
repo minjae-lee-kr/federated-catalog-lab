@@ -1,0 +1,6 @@
+# These optional code-generation postinstall scripts are unnecessary for this lab.
+saveExact: true
+engineStrict: true
+allowBuilds:
+  '@apollo/protobufjs': false
+  protobufjs: false
