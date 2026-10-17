@@ -43,7 +43,7 @@ pnpm debt:ui
 - **수명의 연결:** [실험 설명](docs/cancellation-debt.ko.md)에서 응답 종료, 명시적인 취소 신호 전달, 슬롯을 반환할 시점을 확인할 수 있습니다.
 - **근거의 검증:** [독립 이벤트 검사기](src/cancellation-check.ts)는 누락된 작업 종료, 어긋난 요청 식별자, 일치하지 않는 카운터를 거절합니다. 실제 HTTP 대조군에서도 응답·작업 식별자를 바꿔 검사기의 실패를 확인합니다.
 - **부분 실패의 의미:** 재고 조회가 실패해도 상품·판매자 정보는 남습니다. 알 수 없는 재고를 “품절”로 바꾸지 않고 `null`과 오류로 드러냅니다.
-- **API 전반의 판단:** [Federation 탐색기](docs/federation-explorer.ko.md)는 엔티티 결합, 요청별 배칭, [스키마 변경과 소비자 영향](docs/schema-evolution.ko.md)을 다룹니다.
+- **API 전반의 판단:** [Federation 탐색기](docs/federation-explorer.ko.md)에서 엔티티 결합과 요청별 배칭을 살펴보고, [스키마 변경](docs/schema-evolution.ko.md)을 [타입 생성과 기존 소비자 코드의 컴파일](docs/consumer-impact.ko.md)까지 따라갈 수 있습니다.
 
 [설계에서 선택한 것과 감수한 것](docs/design.ko.md) · [탐색기 구현 검토 순서](docs/review-guide.ko.md)
 

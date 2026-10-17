@@ -43,6 +43,8 @@ weaken-name-nullability: composition composed; schema breaking
 
 This does **not** prove that either client will fail at runtime. The resolver may still return a name, or the client may already handle null. It identifies the changed contract and the consumers whose selections deserve review. GraphQL validation alone cannot answer that runtime question.
 
+The [generated-consumer experiment](consumer-impact.md) follows this change through type regeneration and compilation of unchanged consumer files, with stale generated types as a control.
+
 ## What the JSON records
 
 - The baseline schema digest and consumers identified by **document plus operation name**. Equal operation names in different files remain distinguishable.

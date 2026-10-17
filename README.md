@@ -43,7 +43,7 @@ These are observed values from a local run, not constants embedded in the displa
 - **Follow the lifetime:** [the case study](docs/cancellation-debt.md) explains response closure, explicit signal propagation and the point where a permit may be released.
 - **Challenge the evidence:** [the independent event checker](src/cancellation-check.ts) rejects missing settlements, mismatched request identities and inconsistent counters. Real HTTP controls also corrupt response/work identity to test the checker.
 - **Keep useful data:** catalog and merchant fields survive inventory failure. Unknown inventory remains `null` with an error; it never silently becomes “sold out.”
-- **Explore the wider API:** the [federation explorer](docs/federation-explorer.md) covers entity composition, request-scoped batching and [schema/consumer impact](docs/schema-evolution.md).
+- **Explore the wider API:** the [federation explorer](docs/federation-explorer.md) covers entity composition and request-scoped batching. Follow [schema changes](docs/schema-evolution.md) through [type generation and compilation of unchanged consumers](docs/consumer-impact.md).
 
 ```sh
 pnpm verify       # TypeScript, schema contracts, tests and build
