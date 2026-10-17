@@ -35,12 +35,11 @@ if (this.registry === flight) this.registry = undefined;
 
 At step 4, unconditional cleanup removes F2's registration, so D starts F3. Identity-checked cleanup preserves F2 for D to join.
 
-Recorded:
+C joined F2 at event #17. F1 then settled (#18) and returned its slot (#19). The figure compares the state after cleanup (#20), followed by D's next decision. **F2 is still running with C waiting in both cases; only its registry membership differs.**
 
-| Cleanup | C's flight | D's flight | Total flights started |
-| --- | --- | --- | ---: |
-| Unconditional | F2 | F3 | 3 |
-| Identity-checked | F2 | F2 | 2 |
+![After F1's cleanup, F2 still runs for C in both traces. Unconditional cleanup leaves the registry empty, so D starts F3; identity-checked cleanup retains F2, which D joins.](shared-work/registry-lifetime.en.svg)
+
+The unconditional trace started three flights in total; the identity-checked trace started two. Event numbers identify observations in each trace, not elapsed time.
 
 **C and D received HTTP 200 with normal `stock` data and no GraphQL errors in both cases. A and B were cancelled.** The response's `extensions.sharedWork.flightId` identifies the flight each caller joined; the event ledger records F1 deleting F2's registration in the broken case.
 

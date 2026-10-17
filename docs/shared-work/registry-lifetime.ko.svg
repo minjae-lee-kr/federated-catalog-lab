@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="612" viewBox="0 0 480 612" role="img" aria-labelledby="title description">
+  <title id="title">F1 정리 후에도 F2는 계속 실행된다</title>
+  <desc id="description">두 작업 교체 기록의 이벤트 20 직후 상태 비교. F1은 이벤트 18에서 종료됐고 19에서 슬롯을 반환했다. 두 경우 모두 F2는 실행 중이고 C가 기다린다. 무조건 삭제는 F2의 공유 등록을 지운다. 이후 D는 이벤트 22에서 F3를 시작하고 23에서 참여한다. 자기 작업인지 확인하는 정리는 F2 등록을 유지한다. D는 이벤트 22에서 F2에 참여한다. 실행 시간을 나타낸 그림이 아니라 상태 비교다.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif; }
+    .title { fill: #17324e; font-size: 25px; font-weight: 650; }
+    .policy { fill: #17324e; font-size: 22px; font-weight: 650; }
+    .label { fill: #52657a; font-size: 18px; }
+    .value { fill: #243b53; font-size: 25px; font-weight: 600; }
+    .flight { fill: #214f9b; font-size: 23px; font-weight: 650; }
+    .waiter { fill: #365a85; font-size: 18px; }
+    .decision { fill: #17324e; font-size: 28px; font-weight: 650; }
+    .event { fill: #52657a; font-size: 17px; }
+  </style>
+  <rect width="480" height="612" rx="12" fill="#ffffff"/>
+  <text class="title" x="20" y="34">F1 정리 직후 · #20</text>
+  <text class="event" x="20" y="62">F1 종료 #18 · 슬롯 반환 #19</text>
+
+  <g>
+    <rect x="16" y="86" width="448" height="224" rx="14" fill="#f5f8fc" stroke="#d6e0ee"/>
+    <text class="policy" x="36" y="118">현재 등록을 무조건 삭제</text>
+    <text class="label" x="36" y="150">공유 등록</text>
+    <text class="label" x="214" y="150">실제 작업</text>
+    <rect x="36" y="164" width="154" height="68" rx="8" fill="#ffffff" stroke="#95a7be" stroke-dasharray="5 4"/>
+    <text class="value" x="55" y="206">없음</text>
+    <rect x="214" y="164" width="230" height="68" rx="8" fill="#eaf2ff" stroke="#638bc7"/>
+    <text class="flight" x="230" y="192">F2 · 실행 중</text>
+    <text class="waiter" x="230" y="218">C가 기다림</text>
+    <text class="decision" x="36" y="278">D → F3</text>
+    <text class="event" x="205" y="276">#22 시작 · #23 참여</text>
+  </g>
+
+  <g>
+    <rect x="16" y="334" width="448" height="224" rx="14" fill="#f5f8fc" stroke="#d6e0ee"/>
+    <text class="policy" x="36" y="366">자기 작업인지 확인 후 삭제</text>
+    <text class="label" x="36" y="398">공유 등록</text>
+    <text class="label" x="214" y="398">실제 작업</text>
+    <rect x="36" y="412" width="154" height="68" rx="8" fill="#ffffff" stroke="#638bc7"/>
+    <text class="value" x="55" y="454">F2</text>
+    <rect x="214" y="412" width="230" height="68" rx="8" fill="#eaf2ff" stroke="#638bc7"/>
+    <text class="flight" x="230" y="440">F2 · 실행 중</text>
+    <text class="waiter" x="230" y="466">C가 기다림</text>
+    <text class="decision" x="36" y="526">D → F2</text>
+    <text class="event" x="205" y="524">#22 기존 F2에 참여</text>
+  </g>
+  <text x="20" y="593" fill="#243b53" font-size="20" font-weight="550">두 상태 모두 F2는 실행 중이다.</text>
+</svg>
