@@ -44,7 +44,7 @@ pnpm debt:ui
 
 - **취소 신호가 작업에 닿는 경로:** [실험 설명](docs/cancellation-debt.ko.md)에서 응답 종료부터 신호 전달, 슬롯 반환까지 따라갈 수 있습니다.
 - **검사기 검증:** [독립 이벤트 검사기](src/cancellation-check.ts)는 누락된 작업 종료, 어긋난 요청 식별자, 일치하지 않는 카운터를 거절합니다. 실제 HTTP 대조군에서도 응답·작업 식별자를 바꿔 검사기의 검출 여부를 확인합니다.
-- **부분 실패의 의미:** 재고 조회가 실패해도 상품·판매자 정보는 남습니다. 알 수 없는 재고를 “품절”로 바꾸지 않고 `null`과 오류로 드러냅니다.
+- **실패 뒤에 남길 정보:** [키 하나가 실패할 때 달라지는 세 응답](docs/batch-failure.ko.md)은 개별 오류, 배치 전체 오류, non-null 필드를 실제 HTTP로 비교합니다. 계약 검사와 HTTP 200은 같아도 남는 데이터는 다릅니다.
 - **스키마에서 소비자 코드까지:** [Federation 탐색기](docs/federation-explorer.ko.md)에서 엔티티 결합과 요청별 배칭을 살펴보고, [스키마 변경](docs/schema-evolution.ko.md)을 [타입 생성과 기존 소비자 코드의 컴파일](docs/consumer-impact.ko.md)까지 따라갈 수 있습니다.
 
 [설계에서 선택한 것과 감수한 것](docs/design.ko.md) · [탐색기 구현 검토 순서](docs/review-guide.ko.md)

@@ -9,6 +9,7 @@ import { startSubgraph, disabledPlugins } from './subgraphs.ts';
 import { parseScenario } from './scenarios.ts';
 import type { Scenario } from './scenarios.ts';
 import type { BatchRecord } from './loaders.ts';
+import type { InventoryFailure } from './loaders.ts';
 import { startGraphQLHttp } from './http-server.ts';
 import type { InventoryWork } from './cancellation-work.ts';
 
@@ -17,6 +18,7 @@ export interface FetchTrace {
   durationMs: number;
   outcome: 'ok' | 'graphql-error' | 'transport-error';
   batches: BatchRecord[];
+  captured?: { request: unknown; response: unknown };
 }
 export interface GatewayContext { requestId: string; scenario: Scenario; fetches: FetchTrace[]; signal: AbortSignal }
 type ProcessOptions = Parameters<RemoteGraphQLDataSource<GatewayContext>['process']>[0];
@@ -27,10 +29,12 @@ class ObservedDataSource extends RemoteGraphQLDataSource<GatewayContext> {
   private readonly cooperative: boolean;
   private readonly timeoutMs: number;
   private readonly observeWork: boolean;
-  constructor(service: ServiceName, url: string, timeoutMs: number, work?: InventoryWork) {
+  private readonly captureResponses: boolean;
+  constructor(service: ServiceName, url: string, timeoutMs: number, work?: InventoryWork, captureResponses = false) {
     super({ url });
     this.service = service;
     this.cooperative = work?.mode === 'cooperative'; this.timeoutMs = timeoutMs; this.observeWork = work !== undefined;
+    this.captureResponses = captureResponses;
     this.fetcher = async (input, init) => {
       try {
         const { body, ...request } = init ?? {};
@@ -59,6 +63,11 @@ class ObservedDataSource extends RemoteGraphQLDataSource<GatewayContext> {
         durationMs: Math.round((performance.now() - start) * 100) / 100,
         outcome: result.errors?.length ? 'graphql-error' : 'ok',
         batches: (result.extensions?.lab as { batches?: BatchRecord[] } | undefined)?.batches ?? [],
+        // Capture only the JSON GraphQL envelope, not Apollo's live HTTP metadata.
+        ...(this.captureResponses ? { captured: {
+          request: structuredClone({ query: options.request.query, variables: options.request.variables ?? {} }),
+          response: JSON.parse(JSON.stringify({ data: result.data, errors: result.errors, extensions: result.extensions })),
+        } } : {}),
       });
       return result;
     } catch (error) {
@@ -75,16 +84,21 @@ class ObservedDataSource extends RemoteGraphQLDataSource<GatewayContext> {
   }
 }
 
-export interface LabOptions { port?: number; subgraphTimeoutMs?: number; slowInventoryMs?: number; inventoryWork?: InventoryWork }
+export interface LabOptions {
+  port?: number; subgraphTimeoutMs?: number; slowInventoryMs?: number; inventoryWork?: InventoryWork;
+  /** Fixed, caller-owned experiment inputs; not exposed by the public UI. */
+  fixture?: { sources: Record<ServiceName, string>; inventoryFailure?: InventoryFailure; captureResponses?: boolean };
+}
 
 export async function startLab(options: LabOptions = {}) {
   const subgraphs: Awaited<ReturnType<typeof startSubgraph>>[] = [];
   let server: ApolloServer<GatewayContext> | undefined;
   try {
     // Roll back already-started servers if any later step fails.
-    for (const name of serviceNames) subgraphs.push(await startSubgraph(name, 0, options.slowInventoryMs ?? 450, options.inventoryWork));
+    for (const name of serviceNames) subgraphs.push(await startSubgraph(name, 0, options.slowInventoryMs ?? 450, options.inventoryWork,
+      options.fixture ? { source: options.fixture.sources[name], ...(options.fixture.inventoryFailure ? { inventoryFailure: options.fixture.inventoryFailure } : {}) } : undefined));
     const urls = Object.fromEntries(subgraphs.map(service => [service.name, service.url])) as Record<ServiceName, string>;
-    const composed = composeGraph(undefined, urls);
+    const composed = composeGraph(options.fixture?.sources, urls);
     // Gateway checks this flag synchronously in its constructor. Restore the caller's
     // environment immediately: no await or other task can interleave in this scope.
     const previousTelemetry = process.env.APOLLO_TELEMETRY_DISABLED;
@@ -93,7 +107,7 @@ export async function startLab(options: LabOptions = {}) {
     try {
       gateway = new ApolloGateway({
         supergraphSdl: composed.supergraphSdl,
-        buildService: ({ name, url }) => new ObservedDataSource(name as ServiceName, url!, options.subgraphTimeoutMs ?? 180, options.inventoryWork),
+        buildService: ({ name, url }) => new ObservedDataSource(name as ServiceName, url!, options.subgraphTimeoutMs ?? 180, options.inventoryWork, options.fixture?.captureResponses),
       });
     } finally {
       if (previousTelemetry === undefined) delete process.env.APOLLO_TELEMETRY_DISABLED;

@@ -7,6 +7,7 @@ import { schemaSources } from './schema.ts';
 import type { ServiceName } from './schema.ts';
 import { createContext } from './loaders.ts';
 import type { SubgraphContext } from './loaders.ts';
+import type { InventoryFailure } from './loaders.ts';
 import type { ProductRecord } from './data.ts';
 import { parseScenario } from './scenarios.ts';
 import { startGraphQLHttp } from './http-server.ts';
@@ -44,9 +45,10 @@ export const disabledPlugins = () => [
   ApolloServerPluginInlineTraceDisabled(), ApolloServerPluginLandingPageDisabled(),
 ];
 
-export async function startSubgraph(name: ServiceName, port = 0, slowInventoryMs = 450, inventoryWork?: InventoryWork) {
+export async function startSubgraph(name: ServiceName, port = 0, slowInventoryMs = 450, inventoryWork?: InventoryWork,
+  fixture?: { source: string; inventoryFailure?: InventoryFailure }) {
   const server = new ApolloServer<SubgraphContext>({
-    schema: buildSubgraphSchema({ typeDefs: parse(schemaSources[name]), resolvers: resolvers[name] }),
+    schema: buildSubgraphSchema({ typeDefs: parse(fixture?.source ?? schemaSources[name]), resolvers: resolvers[name] }),
     includeStacktraceInErrorResponses: false,
     stopOnTerminationSignals: false,
     plugins: [...disabledPlugins(), {
@@ -68,7 +70,8 @@ export async function startSubgraph(name: ServiceName, port = 0, slowInventoryMs
       deadlineAt = Number(rawDeadline);
     }
     return createContext(parseScenario(req.headers['x-lab-scenario']), slowInventoryMs,
-      name === 'inventory' && inventoryWork ? () => inventoryWork.run({ requestId, signal: lifetime.signal, ...(deadlineAt === undefined ? {} : { deadlineAt }) }) : undefined);
+      name === 'inventory' && inventoryWork ? () => inventoryWork.run({ requestId, signal: lifetime.signal, ...(deadlineAt === undefined ? {} : { deadlineAt }) }) : undefined,
+      name === 'inventory' ? fixture?.inventoryFailure : undefined);
   }, port);
   return { name, ...running };
 }
