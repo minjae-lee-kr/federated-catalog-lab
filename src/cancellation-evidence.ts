@@ -1,11 +1,20 @@
 import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { lstat, readdir, readFile } from 'node:fs/promises';
-import { join, relative } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 
 const execute = promisify(execFile);
+// Ignore inherited Git paths, configuration and trace destinations. This does not
+// sandbox hostile code or authenticate the host that records the evidence.
+const gitEnvironment = (): NodeJS.ProcessEnv => ({
+  ...Object.fromEntries(Object.entries(process.env).filter(([name]) => !/^GIT_/i.test(name))),
+  GIT_CONFIG_NOSYSTEM: '1',
+  GIT_CONFIG_GLOBAL: process.platform === 'win32' ? 'NUL' : '/dev/null',
+  GIT_TERMINAL_PROMPT: '0',
+  GIT_OPTIONAL_LOCKS: '0',
+});
 export const projectRoot = fileURLToPath(new URL(import.meta.url.endsWith('.js') ? '../../' : '../', import.meta.url));
 export async function sourceEvidence(root = projectRoot) {
   const manifest: { path: string; sha256: string }[] = [];
@@ -24,7 +33,10 @@ export async function sourceEvidence(root = projectRoot) {
   let git: { head: string; branch: string; dirty: boolean } | null = null;
   try {
     await lstat(join(root, '.git'));
-    const run = (args: string[]) => execute('git', args, { cwd: root, windowsHide: true, timeout: 5_000 });
+    const run = (args: string[]) => execute('git', args, { cwd: root, env: gitEnvironment(), windowsHide: true, timeout: 5_000 });
+    const top = (await run(['rev-parse', '--show-toplevel'])).stdout.trim();
+    const normalized = (path: string) => process.platform === 'win32' ? resolve(path).toLowerCase() : resolve(path);
+    if (normalized(top) !== normalized(root)) throw new Error('Unexpected Git root.');
     const [head, branch, status] = await Promise.all([run(['rev-parse', 'HEAD']), run(['branch', '--show-current']), run(['status', '--porcelain', '--untracked-files=all'])]);
     git = { head: head.stdout.trim(), branch: branch.stdout.trim(), dirty: status.stdout.length > 0 };
   } catch { /* The manifest remains useful when Git is absent. No enclosing repository is queried. */ }
