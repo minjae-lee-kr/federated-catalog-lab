@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
-import { lstat, readdir, readFile } from 'node:fs/promises';
+import { lstat, readdir, readFile, realpath } from 'node:fs/promises';
 import { join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
@@ -35,8 +35,10 @@ export async function sourceEvidence(root = projectRoot) {
     await lstat(join(root, '.git'));
     const run = (args: string[]) => execute('git', args, { cwd: root, env: gitEnvironment(), windowsHide: true, timeout: 5_000 });
     const top = (await run(['rev-parse', '--show-toplevel'])).stdout.trim();
+    // Windows short paths (and directory aliases) can name the same physical root.
+    const [actualRoot, requestedRoot] = await Promise.all([realpath(top), realpath(root)]);
     const normalized = (path: string) => process.platform === 'win32' ? resolve(path).toLowerCase() : resolve(path);
-    if (normalized(top) !== normalized(root)) throw new Error('Unexpected Git root.');
+    if (normalized(actualRoot) !== normalized(requestedRoot)) throw new Error('Unexpected Git root.');
     const [head, branch, status] = await Promise.all([run(['rev-parse', 'HEAD']), run(['branch', '--show-current']), run(['status', '--porcelain', '--untracked-files=all'])]);
     git = { head: head.stdout.trim(), branch: branch.stdout.trim(), dirty: status.stdout.length > 0 };
   } catch { /* The manifest remains useful when Git is absent. No enclosing repository is queried. */ }
