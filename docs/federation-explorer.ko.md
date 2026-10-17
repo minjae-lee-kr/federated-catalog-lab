@@ -10,7 +10,7 @@ Apollo Federation 서버에서 엔티티 결합, 요청별 배칭, 부분 응답
 
 ## 실행하기
 
-Node.js **24**, pnpm **11.25.0**이 필요합니다. CI는 Node.js **24.19.0**에서 검증합니다. 의존성을 설치한 뒤에는 Docker, DB, API 키, 클라우드 계정이나 외부 서비스가 필요하지 않습니다.
+Node.js **24.19.0 이상인 24.x 버전**과 pnpm **11.25.0**이 필요합니다. CI는 Node.js **24.19.0**에서 검증합니다. 의존성을 설치한 뒤에는 Docker, DB, API 키, 클라우드 계정이나 외부 서비스가 필요하지 않습니다.
 
 ```sh
 pnpm install --frozen-lockfile

@@ -12,7 +12,7 @@ All products, merchants, faults and timing thresholds are invented. This is an o
 
 ## Run the explorer
 
-Requires **Node.js 24** and **pnpm 11.25.0**. No Docker, database, API key, cloud account or external service is needed after dependency installation.
+Requires **Node.js 24.19.0 or newer in the 24.x line** and **pnpm 11.25.0**. CI runs on Node.js 24.19.0. No Docker, database, API key, cloud account or external service is needed after dependency installation.
 
 ```sh
 pnpm install --frozen-lockfile
