@@ -6,7 +6,7 @@
 
 A product page can stop waiting for inventory while the inventory work continues. If the limiter returns that work's execution slot on timeout, it can admit more work while the previous work still consumes capacity.
 
-This independent, synthetic lab sends real HTTP requests through an Apollo Federation gateway combining catalog, inventory and merchant data. It compares four cancellation and admission policies, then reconstructs active work and held slots (permits) separately from events and HTTP responses. The deliberately wrong policy can show **one held permit while four jobs are still running**.
+This personal lab combines fictional catalog, inventory and merchant APIs through Apollo Federation. It compares four policies over real HTTP calls. Execution slots (permits) are used to limit how many jobs may run at once; the checker reconstructs active jobs and held slots from events and correlates them with HTTP responses. The deliberately wrong policy can show **one held permit while four jobs are still running**.
 
 **Return the execution slot when the work actually ends.** Holding it keeps the limit meaningful, but abandoned work occupies capacity and new requests may be rejected. Cooperative cancellation helps only when the work responds to it; here that work is a timer, with all services in one Node process.
 
@@ -36,16 +36,14 @@ Four sequential reads. A configured **160 ms deadline per subgraph fetch**, **1,
 
 These are observed values from a local run, not constants embedded in the display. Each run checks whether the expected counterexamples actually occurred. The checker reconstructs jobs and permits from events, correlates them with the HTTP responses and distinguishes **cancellation requested** from **work cancelled**.
 
-**A permit belongs to the operation that consumes capacity—not merely to the promise waiting for its result.**
-
 [Inspect the recorded event timelines](docs/observed-trace.md): two policies, the original JSON, and a reproducible figure from revision `ff47d27`.
 
 **When callers share work:** [normal responses can hide duplicate execution](docs/shared-work.md). A fixed HTTP experiment separates caller cancellation, physical settlement and registry cleanup.
 
 ## Inspect the engineering judgment
 
-- **Follow the lifetime:** [the case study](docs/cancellation-debt.md) explains response closure, explicit signal propagation and the point where a permit may be released.
-- **Challenge the evidence:** [the independent event checker](src/cancellation-check.ts) rejects missing settlements, mismatched request identities and inconsistent counters. Real HTTP controls also corrupt response/work identity to test the checker.
+- **Trace cancellation to the work:** [the case study](docs/cancellation-debt.md) follows response closure, signal propagation and the point where a permit may be released.
+- **Test the checker:** [the independent event checker](src/cancellation-check.ts) rejects missing settlements, mismatched request identities and inconsistent counters. Real HTTP controls also corrupt response/work identity to test the checker.
 - **Keep useful data:** catalog and merchant fields survive inventory failure. Unknown inventory remains `null` with an error; it never silently becomes “sold out.”
 - **Explore the wider API:** the [federation explorer](docs/federation-explorer.md) covers entity composition and request-scoped batching. Follow [schema changes](docs/schema-evolution.md) through [type generation and compilation of unchanged consumers](docs/consumer-impact.md).
 
