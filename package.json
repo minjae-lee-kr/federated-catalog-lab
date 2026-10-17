@@ -16,6 +16,7 @@
     "test": "node --test tests/*.test.ts",
     "contracts": "node src/check-contracts.ts",
     "impact": "node src/schema-impact-cli.ts",
+    "consumer-impact": "node src/consumer-impact-cli.ts",
     "debt": "node src/cancellation-cli.ts",
     "debt:ui": "node src/cancellation-main.ts",
     "debt:export": "node src/cancellation-export-cli.ts",
@@ -32,7 +33,10 @@
     "graphql": "16.14.2"
   },
   "devDependencies": {
+    "@graphql-codegen/core": "6.2.2",
+    "@graphql-codegen/typescript-operations": "6.1.10",
     "@types/node": "24.19.2",
+    "graphql-sock": "1.0.1",
     "typescript": "7.0.2"
   }
 }
