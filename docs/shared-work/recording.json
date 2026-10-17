@@ -1,0 +1,2510 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-17T03:18:07.138Z",
+  "runtime": {
+    "node": "v24.19.0",
+    "platform": "win32",
+    "arch": "x64",
+    "undici": "7.29.0"
+  },
+  "source": {
+    "sha256": "0a8ad8b3e1f20e3f8d014ec86dad1be6dbc6777d866ca255a440ad1298484970",
+    "manifest": [
+      {
+        "path": ".github/workflows/verify.yml",
+        "sha256": "5b24506a945c18342badd341451e6d9a638e6f7c7339e2b9d5c72da5ea09abb3"
+      },
+      {
+        "path": ".npmrc",
+        "sha256": "cde76ca04e048c3eba070a2c0dfcf5b723cf6014eab177157096b924f24ec4ca"
+      },
+      {
+        "path": "README.md",
+        "sha256": "6ccfa525a20b3c059a8b83da378a8ee95f4a6436ef01e9020b543a888c2cf5ab"
+      },
+      {
+        "path": "SECURITY.md",
+        "sha256": "2649535c04a68f544ea3c56115bc110b172f7bdfd6280ed3c09acae52e4864da"
+      },
+      {
+        "path": "docs/cancellation-debt.ko.md",
+        "sha256": "061b0a95116d8b9f1fb53e2aba6eaaa4dbbbbd46ecf65f9162f9082f07892b2f"
+      },
+      {
+        "path": "docs/cancellation-debt.md",
+        "sha256": "1aaffbac13a0077453423879d1256a0692f9585904b922eddd8c9decaed5673b"
+      },
+      {
+        "path": "docs/consumer-impact.ko.md",
+        "sha256": "c0768464259865e0d6026731a3c8982c719ef5a51f5813fd4b75373ea0b0d729"
+      },
+      {
+        "path": "docs/consumer-impact.md",
+        "sha256": "0367b1e25af33f402e058b2b7b2815ddf36e69413b82df94e0f7f3007bfc6ec8"
+      },
+      {
+        "path": "docs/cover.svg",
+        "sha256": "5dea0ce28359547d3244bef8bcab59570e32d6d2826ddbfb8d260d96f6c962c9"
+      },
+      {
+        "path": "docs/design.ko.md",
+        "sha256": "62be0f7781fd445e9809a1dc177748d5b26c8d7b36b5c64a319b21d8e4ead72d"
+      },
+      {
+        "path": "docs/design.md",
+        "sha256": "3dc3acde37f0ee8a007788ea3a7697f16c1ff8600765cc3f98ab2e6f6c15b7a9"
+      },
+      {
+        "path": "docs/federation-explorer.ko.md",
+        "sha256": "6c815e991510c6761dc4380e39f9c7fde0ef9deeb16309e3466b5057ae8245e7"
+      },
+      {
+        "path": "docs/federation-explorer.md",
+        "sha256": "e0d1379ace9be1406be791c2803c52b4da7440962a640d8097a0e26a57146f86"
+      },
+      {
+        "path": "docs/observed-trace.ko.md",
+        "sha256": "9d002b169600add68dd9ea6fcb20b86d063650c0539031ac2234cedc874ad317"
+      },
+      {
+        "path": "docs/observed-trace.md",
+        "sha256": "d9eb158b4eefe717b022e965e8ced693a9222fbcf9e4f558a1c59de5c093ed90"
+      },
+      {
+        "path": "docs/observed-trace/assets/cancellation-trace-en.svg",
+        "sha256": "a8f0a9dbbc340f88983f80cb607bed8bd3045d552f3126a0fa17ce0297eef379"
+      },
+      {
+        "path": "docs/observed-trace/assets/cancellation-trace-ko.svg",
+        "sha256": "5d8edddac0e1c763045222e8b7ba42200a963b901c7e4d5e132bfc4ee5e8268f"
+      },
+      {
+        "path": "docs/observed-trace/recording/provenance.json",
+        "sha256": "d1a38a8a1ffbe58d81943134fc2b8c8713ae768dcd84ef297373ef4f30af9b49"
+      },
+      {
+        "path": "docs/observed-trace/recording/report.json",
+        "sha256": "421617b5c8e27bb1446a864e909dfc3f0a3de6e223f914d323aa07502893aa50"
+      },
+      {
+        "path": "docs/observed-trace/render.py",
+        "sha256": "6e43a400ecbddafaa7239472ba1bec822fa6dcf8bd7c192995c848937735b27c"
+      },
+      {
+        "path": "docs/observed-trace/requirements.txt",
+        "sha256": "de950d3b75e4ad1a760c121533e06390c84574f7dd0b53c0eaa742ab6d5c2f38"
+      },
+      {
+        "path": "docs/review-guide.ko.md",
+        "sha256": "e58f3b799720960180a7c1ed215852a482d5b3ff1ae952244e5d78fafa1097c6"
+      },
+      {
+        "path": "docs/review-guide.md",
+        "sha256": "79fe277cf3be5af7c92ccfd63196f52983ce4625f194b9db8d53329f548de48e"
+      },
+      {
+        "path": "docs/schema-evolution.ko.md",
+        "sha256": "142aa8f8a69b1bb254ba3a7247c32a39f37632f4626e7141ccc43f340093d2e9"
+      },
+      {
+        "path": "docs/schema-evolution.md",
+        "sha256": "b47998a45e1723e3266cf39eadb1ad124905ec0138b7d64bd0fb64b79a538afd"
+      },
+      {
+        "path": "operations/CatalogCards.graphql",
+        "sha256": "cad6ae2b4a9a405d27657ff9effe546d24eea03669099f295479d0b5dc806933"
+      },
+      {
+        "path": "operations/CatalogOnly.graphql",
+        "sha256": "54eaa3cae5b24cc5b39a320633ca1d32a99fc3019e01e2f3433950642dfc3b35"
+      },
+      {
+        "path": "package.json",
+        "sha256": "a33c458ee292b115469d335a737916a78926ee6be30e567b928517b522ba78fe"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "sha256": "2ceec78dec2e4fb854428e68c873caf64e1f642aaad93c1b75b9a40e978e39dd"
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "sha256": "154f665dd13fb71bc567d561163fb7c651ce6672bfffc53cb38c7bc76ddf17f0"
+      },
+      {
+        "path": "public/app.js",
+        "sha256": "5eda1020c55530ed05c54328ad86d79940d687bcdae7264dc05b36079f494c01"
+      },
+      {
+        "path": "public/debt-live.js",
+        "sha256": "16e3d8b5a4b16e529daefb4142005d93220c317d76567b3b5b5a3bfd1657bf63"
+      },
+      {
+        "path": "public/debt.css",
+        "sha256": "80ba69c0a61c999c1f0511200d1a865813d38ff02e5b5ab8bdc233eeb812b341"
+      },
+      {
+        "path": "public/debt.html",
+        "sha256": "1eae7bb8c1df0971c30a06103925acdbcd203e14f9ac9be2cbdd389d886175b0"
+      },
+      {
+        "path": "public/debt.js",
+        "sha256": "71d337704c9feae18a16f0cb7a99cc645c52669a705f2fb2fed572d607bad3e3"
+      },
+      {
+        "path": "public/index.html",
+        "sha256": "85a5297841f5652e4706148c36704227dab4fe73a8302540c28ca6ebd339d63c"
+      },
+      {
+        "path": "public/style.css",
+        "sha256": "b92dffcaca5f49579e5111e4b6aec0378ea516e9ce259abc64254d3ada8bc605"
+      },
+      {
+        "path": "schemas/api-baseline.graphql",
+        "sha256": "5dac235c739cda409e68e44b5819743753870c8d222132bae321860580a67d3f"
+      },
+      {
+        "path": "schemas/catalog.graphql",
+        "sha256": "8ab1ce0098989f02dc5575e6f93bea9a840b1ac5856241f16a1474cdc4d1f7fd"
+      },
+      {
+        "path": "schemas/inventory.graphql",
+        "sha256": "1d50b805994e81e7a99e76b1fa0659073d64243e66f9f946515f1fc53c0af920"
+      },
+      {
+        "path": "schemas/merchants.graphql",
+        "sha256": "b331099e3d9f927bb412540960275ccfc8c4a1453772da058ffd6a3d81279920"
+      },
+      {
+        "path": "scripts/copy-assets.mjs",
+        "sha256": "95d1227e33102f25ed741e52a5975aaea60135e2769a3fa64fd8013e307fe8e8"
+      },
+      {
+        "path": "src/cancellation-check.ts",
+        "sha256": "24c63759a7e2241910ea60599a36e6f9c5680ffc2a0adcd9c507cc6a5077ad92"
+      },
+      {
+        "path": "src/cancellation-cli.ts",
+        "sha256": "97041b9a8b50757f438d01f0a3cdaa7cff74f907ceccbd002fbb593916abd2eb"
+      },
+      {
+        "path": "src/cancellation-evidence.ts",
+        "sha256": "c4c6b7c4eba8b208785f6463fd9638ad67accfb43a4e85ead88f4891763ac616"
+      },
+      {
+        "path": "src/cancellation-experiment.ts",
+        "sha256": "fd572acc6fdf28f5e9e9167fc961d98b751df8a6f259e6c3a7b38cffc740a011"
+      },
+      {
+        "path": "src/cancellation-export-cli.ts",
+        "sha256": "2e52066af608d701d5c288b4c05cdc85d2f5759fc084ead6836cc88696f57907"
+      },
+      {
+        "path": "src/cancellation-export.ts",
+        "sha256": "08a0968fb787aa0ee2101e7ea15ca4e33201fea3323a90e97a7a6846e082043e"
+      },
+      {
+        "path": "src/cancellation-main.ts",
+        "sha256": "83c65a51d5c4facb61a4344bf60f2b8dc78b9ad877ddd69a94345bb32c855d21"
+      },
+      {
+        "path": "src/cancellation-ui-server.ts",
+        "sha256": "4ba4c190a04df342b5b0a9d2f50c01475d2726116c2f6e7b2d8962b1b93121b4"
+      },
+      {
+        "path": "src/cancellation-work.ts",
+        "sha256": "f4af2fc7f4ccc169fa8f20af9110c0676f1c4ed06e4ef7c8e9522fa8f863e5ed"
+      },
+      {
+        "path": "src/check-contracts.ts",
+        "sha256": "5829b2f94cbff8d653f7fcfee92a48661b0129f0c10879e16aab076df931e3ad"
+      },
+      {
+        "path": "src/consumer-impact-cli.ts",
+        "sha256": "0104eb18f9a032678b9dc8cfd2543ebd8b50471b50672afbf613f41f78d68852"
+      },
+      {
+        "path": "src/consumer-impact-process.ts",
+        "sha256": "073f1adae3d58f41d8dc76ef1519f8833b64a1e0fa4e908f6cf5713a9adc6a41"
+      },
+      {
+        "path": "src/consumer-impact-worker.ts",
+        "sha256": "a6d396e6381e521fe147dc2ee3e6ca9131e5c4f62334918f78d5a5c890cd15f6"
+      },
+      {
+        "path": "src/consumer-impact.ts",
+        "sha256": "60f79c53c06ae670c0b427e9c1db505309b46fb3a2ee106ec51a09a50f349529"
+      },
+      {
+        "path": "src/data.ts",
+        "sha256": "037ebec37d743a7d0236f24b1df7ca4c6e6fe073f20603a811d10f2dd416ddfe"
+      },
+      {
+        "path": "src/evolution-scenarios.ts",
+        "sha256": "16c75312e69e0632240edc40819b4f86dd8f7de192393fe1200fdad1fc021ca1"
+      },
+      {
+        "path": "src/http-server.ts",
+        "sha256": "5069eea1a9de921c90072de5f253337e2f0cb8eec607f1cf9eebbd1d3075127a"
+      },
+      {
+        "path": "src/lab.ts",
+        "sha256": "13a5d3641ae78bb64887d654759c57e49221d431077b1e5a6aa9d0a326ede4eb"
+      },
+      {
+        "path": "src/loaders.ts",
+        "sha256": "9a10c8ea0bfdb7fef778dc728b475000565caaf1b25158d365cd0d556616ebb5"
+      },
+      {
+        "path": "src/main.ts",
+        "sha256": "ef7aadf35e5d3c72fd3a102c035c0d382f1a5c587c42ce01f746155eab4df178"
+      },
+      {
+        "path": "src/run-scenarios.ts",
+        "sha256": "b99accc475c5f8d7b9537b5439c41632fea2238f05c64bd673b491d675bb3d2a"
+      },
+      {
+        "path": "src/scenarios.ts",
+        "sha256": "acb24a5fa7c0479a8f6df60cf7e8aa3f2c3ee8067f7fcdc126c006ff6df2fb58"
+      },
+      {
+        "path": "src/schema-impact-cli.ts",
+        "sha256": "7bc479e3bccf5851657751388f10fcc5bc4180c0d3661cd31b8031122031a460"
+      },
+      {
+        "path": "src/schema-impact.ts",
+        "sha256": "b302fa525af25de065a34e6aa44d56d5ac9f7dd070fc0e448fea096e263d9a69"
+      },
+      {
+        "path": "src/schema.ts",
+        "sha256": "b34e18f9541be85442719fdf7370388af26aebf630e42674864cdb670ccab278"
+      },
+      {
+        "path": "src/shared-work-assessment.ts",
+        "sha256": "210dbc025243ab1cff530d5acf3bd082f1f7dc83831515a71d088b907666779c"
+      },
+      {
+        "path": "src/shared-work-check.ts",
+        "sha256": "d67b0e2f71cc9e80316a1d1128a74287947644652f3e82d694cfdabdbfdfd876"
+      },
+      {
+        "path": "src/shared-work-cli.ts",
+        "sha256": "12dea163b9c6a74ce1a4eb8107a236e67a6d7f2338eec8898d6f76a037fd28c0"
+      },
+      {
+        "path": "src/shared-work-experiment.ts",
+        "sha256": "fe2913de8568ece2ff88c880129272df67e4291c908e4c90861eb77496cf257a"
+      },
+      {
+        "path": "src/shared-work.ts",
+        "sha256": "04d48cc5ae928da726c8e667c83f97649bbd59015dc786424acbe18699098e2d"
+      },
+      {
+        "path": "src/shutdown.ts",
+        "sha256": "0f47f16925318a9342c8e86dd64e59606b2760532d2c23fd68f43b22bf6ef465"
+      },
+      {
+        "path": "src/subgraphs.ts",
+        "sha256": "c40d0274550110624634882971b0dd2d1333bfa1d281a7aaf8f1590fabd4f22b"
+      },
+      {
+        "path": "src/ui-server.ts",
+        "sha256": "00a27d9725edc0b5f9a4cf2d7639dd59c575ae215cd28a766379e97fc7898256"
+      },
+      {
+        "path": "tests/cancellation-evidence.test.ts",
+        "sha256": "b5cc1be1887831d2155f45233a6d098649f6ffec10e790add3c222ac68a57486"
+      },
+      {
+        "path": "tests/cancellation-export.test.ts",
+        "sha256": "b2a7f59584d53b37824023b17c80f1d977fc88b6d0559e6f4ed67fe699c23b2f"
+      },
+      {
+        "path": "tests/cancellation.test.ts",
+        "sha256": "b2f6d651b94cdf955df598fcbca2686f60d51cf0dd2d06adf6e332c516ac476c"
+      },
+      {
+        "path": "tests/consumer-impact.test.ts",
+        "sha256": "772cd2d2db10361eef3a66d89f2ab0fed5b4ade82a0cdfc190f940f4af5caf6b"
+      },
+      {
+        "path": "tests/contracts.test.ts",
+        "sha256": "6aa28131b251665b9b45c21d1ff18213d547042583e78c40895c6c90a60fa988"
+      },
+      {
+        "path": "tests/explorer-locale.test.ts",
+        "sha256": "7bb0e70c30a6992692b5b2ba54d237692f6804b8d0df2a8843815ce034bc6715"
+      },
+      {
+        "path": "tests/integration.test.ts",
+        "sha256": "635ac64bd1a268e37483e12b82213834d4e7823c6d6015ac83d4b69b598a9681"
+      },
+      {
+        "path": "tests/provenance-environment.test.ts",
+        "sha256": "bb07382bc786b10c43e382e2307a5c9b7311c39b6c263faeaaa2f2d31c9999f5"
+      },
+      {
+        "path": "tests/schema-impact.test.ts",
+        "sha256": "51f896f6d73939fc1ba50d79a293e14c02c59c7a8bde9e63b3d14b4f1a32b63a"
+      },
+      {
+        "path": "tests/shared-work-check.test.ts",
+        "sha256": "858527e2a955335779f38943ea4f9eedfb4d7f9551e10fa46a829b3fe8549221"
+      },
+      {
+        "path": "tests/shared-work.test.ts",
+        "sha256": "a97415e88388431d2ca9c5c0017a9f4cecad8215e7ef22eb4e962d59b947e110"
+      },
+      {
+        "path": "tests/shutdown.test.ts",
+        "sha256": "cce94a02f0f4f9c36e6a9ed120fe8cd411c1590f0e9790237c19e40ad37ae1f0"
+      },
+      {
+        "path": "tests/ui-http.test.ts",
+        "sha256": "8f5a1e7092dfb780370435bcffe347519db99f1a3e9be1d525396600c2b6ee60"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "086114af1ee2901b25e603c2a1e7fcc49b4fa7630019e5cf3b8356e80f58e531"
+      }
+    ],
+    "git": {
+      "head": "b5b124c32c9eff395fbd7c929dcf2c709bb3cdc0",
+      "branch": "main",
+      "dirty": false
+    }
+  },
+  "sourceAfter": {
+    "sha256": "0a8ad8b3e1f20e3f8d014ec86dad1be6dbc6777d866ca255a440ad1298484970",
+    "manifest": [
+      {
+        "path": ".github/workflows/verify.yml",
+        "sha256": "5b24506a945c18342badd341451e6d9a638e6f7c7339e2b9d5c72da5ea09abb3"
+      },
+      {
+        "path": ".npmrc",
+        "sha256": "cde76ca04e048c3eba070a2c0dfcf5b723cf6014eab177157096b924f24ec4ca"
+      },
+      {
+        "path": "README.md",
+        "sha256": "6ccfa525a20b3c059a8b83da378a8ee95f4a6436ef01e9020b543a888c2cf5ab"
+      },
+      {
+        "path": "SECURITY.md",
+        "sha256": "2649535c04a68f544ea3c56115bc110b172f7bdfd6280ed3c09acae52e4864da"
+      },
+      {
+        "path": "docs/cancellation-debt.ko.md",
+        "sha256": "061b0a95116d8b9f1fb53e2aba6eaaa4dbbbbd46ecf65f9162f9082f07892b2f"
+      },
+      {
+        "path": "docs/cancellation-debt.md",
+        "sha256": "1aaffbac13a0077453423879d1256a0692f9585904b922eddd8c9decaed5673b"
+      },
+      {
+        "path": "docs/consumer-impact.ko.md",
+        "sha256": "c0768464259865e0d6026731a3c8982c719ef5a51f5813fd4b75373ea0b0d729"
+      },
+      {
+        "path": "docs/consumer-impact.md",
+        "sha256": "0367b1e25af33f402e058b2b7b2815ddf36e69413b82df94e0f7f3007bfc6ec8"
+      },
+      {
+        "path": "docs/cover.svg",
+        "sha256": "5dea0ce28359547d3244bef8bcab59570e32d6d2826ddbfb8d260d96f6c962c9"
+      },
+      {
+        "path": "docs/design.ko.md",
+        "sha256": "62be0f7781fd445e9809a1dc177748d5b26c8d7b36b5c64a319b21d8e4ead72d"
+      },
+      {
+        "path": "docs/design.md",
+        "sha256": "3dc3acde37f0ee8a007788ea3a7697f16c1ff8600765cc3f98ab2e6f6c15b7a9"
+      },
+      {
+        "path": "docs/federation-explorer.ko.md",
+        "sha256": "6c815e991510c6761dc4380e39f9c7fde0ef9deeb16309e3466b5057ae8245e7"
+      },
+      {
+        "path": "docs/federation-explorer.md",
+        "sha256": "e0d1379ace9be1406be791c2803c52b4da7440962a640d8097a0e26a57146f86"
+      },
+      {
+        "path": "docs/observed-trace.ko.md",
+        "sha256": "9d002b169600add68dd9ea6fcb20b86d063650c0539031ac2234cedc874ad317"
+      },
+      {
+        "path": "docs/observed-trace.md",
+        "sha256": "d9eb158b4eefe717b022e965e8ced693a9222fbcf9e4f558a1c59de5c093ed90"
+      },
+      {
+        "path": "docs/observed-trace/assets/cancellation-trace-en.svg",
+        "sha256": "a8f0a9dbbc340f88983f80cb607bed8bd3045d552f3126a0fa17ce0297eef379"
+      },
+      {
+        "path": "docs/observed-trace/assets/cancellation-trace-ko.svg",
+        "sha256": "5d8edddac0e1c763045222e8b7ba42200a963b901c7e4d5e132bfc4ee5e8268f"
+      },
+      {
+        "path": "docs/observed-trace/recording/provenance.json",
+        "sha256": "d1a38a8a1ffbe58d81943134fc2b8c8713ae768dcd84ef297373ef4f30af9b49"
+      },
+      {
+        "path": "docs/observed-trace/recording/report.json",
+        "sha256": "421617b5c8e27bb1446a864e909dfc3f0a3de6e223f914d323aa07502893aa50"
+      },
+      {
+        "path": "docs/observed-trace/render.py",
+        "sha256": "6e43a400ecbddafaa7239472ba1bec822fa6dcf8bd7c192995c848937735b27c"
+      },
+      {
+        "path": "docs/observed-trace/requirements.txt",
+        "sha256": "de950d3b75e4ad1a760c121533e06390c84574f7dd0b53c0eaa742ab6d5c2f38"
+      },
+      {
+        "path": "docs/review-guide.ko.md",
+        "sha256": "e58f3b799720960180a7c1ed215852a482d5b3ff1ae952244e5d78fafa1097c6"
+      },
+      {
+        "path": "docs/review-guide.md",
+        "sha256": "79fe277cf3be5af7c92ccfd63196f52983ce4625f194b9db8d53329f548de48e"
+      },
+      {
+        "path": "docs/schema-evolution.ko.md",
+        "sha256": "142aa8f8a69b1bb254ba3a7247c32a39f37632f4626e7141ccc43f340093d2e9"
+      },
+      {
+        "path": "docs/schema-evolution.md",
+        "sha256": "b47998a45e1723e3266cf39eadb1ad124905ec0138b7d64bd0fb64b79a538afd"
+      },
+      {
+        "path": "operations/CatalogCards.graphql",
+        "sha256": "cad6ae2b4a9a405d27657ff9effe546d24eea03669099f295479d0b5dc806933"
+      },
+      {
+        "path": "operations/CatalogOnly.graphql",
+        "sha256": "54eaa3cae5b24cc5b39a320633ca1d32a99fc3019e01e2f3433950642dfc3b35"
+      },
+      {
+        "path": "package.json",
+        "sha256": "a33c458ee292b115469d335a737916a78926ee6be30e567b928517b522ba78fe"
+      },
+      {
+        "path": "pnpm-lock.yaml",
+        "sha256": "2ceec78dec2e4fb854428e68c873caf64e1f642aaad93c1b75b9a40e978e39dd"
+      },
+      {
+        "path": "pnpm-workspace.yaml",
+        "sha256": "154f665dd13fb71bc567d561163fb7c651ce6672bfffc53cb38c7bc76ddf17f0"
+      },
+      {
+        "path": "public/app.js",
+        "sha256": "5eda1020c55530ed05c54328ad86d79940d687bcdae7264dc05b36079f494c01"
+      },
+      {
+        "path": "public/debt-live.js",
+        "sha256": "16e3d8b5a4b16e529daefb4142005d93220c317d76567b3b5b5a3bfd1657bf63"
+      },
+      {
+        "path": "public/debt.css",
+        "sha256": "80ba69c0a61c999c1f0511200d1a865813d38ff02e5b5ab8bdc233eeb812b341"
+      },
+      {
+        "path": "public/debt.html",
+        "sha256": "1eae7bb8c1df0971c30a06103925acdbcd203e14f9ac9be2cbdd389d886175b0"
+      },
+      {
+        "path": "public/debt.js",
+        "sha256": "71d337704c9feae18a16f0cb7a99cc645c52669a705f2fb2fed572d607bad3e3"
+      },
+      {
+        "path": "public/index.html",
+        "sha256": "85a5297841f5652e4706148c36704227dab4fe73a8302540c28ca6ebd339d63c"
+      },
+      {
+        "path": "public/style.css",
+        "sha256": "b92dffcaca5f49579e5111e4b6aec0378ea516e9ce259abc64254d3ada8bc605"
+      },
+      {
+        "path": "schemas/api-baseline.graphql",
+        "sha256": "5dac235c739cda409e68e44b5819743753870c8d222132bae321860580a67d3f"
+      },
+      {
+        "path": "schemas/catalog.graphql",
+        "sha256": "8ab1ce0098989f02dc5575e6f93bea9a840b1ac5856241f16a1474cdc4d1f7fd"
+      },
+      {
+        "path": "schemas/inventory.graphql",
+        "sha256": "1d50b805994e81e7a99e76b1fa0659073d64243e66f9f946515f1fc53c0af920"
+      },
+      {
+        "path": "schemas/merchants.graphql",
+        "sha256": "b331099e3d9f927bb412540960275ccfc8c4a1453772da058ffd6a3d81279920"
+      },
+      {
+        "path": "scripts/copy-assets.mjs",
+        "sha256": "95d1227e33102f25ed741e52a5975aaea60135e2769a3fa64fd8013e307fe8e8"
+      },
+      {
+        "path": "src/cancellation-check.ts",
+        "sha256": "24c63759a7e2241910ea60599a36e6f9c5680ffc2a0adcd9c507cc6a5077ad92"
+      },
+      {
+        "path": "src/cancellation-cli.ts",
+        "sha256": "97041b9a8b50757f438d01f0a3cdaa7cff74f907ceccbd002fbb593916abd2eb"
+      },
+      {
+        "path": "src/cancellation-evidence.ts",
+        "sha256": "c4c6b7c4eba8b208785f6463fd9638ad67accfb43a4e85ead88f4891763ac616"
+      },
+      {
+        "path": "src/cancellation-experiment.ts",
+        "sha256": "fd572acc6fdf28f5e9e9167fc961d98b751df8a6f259e6c3a7b38cffc740a011"
+      },
+      {
+        "path": "src/cancellation-export-cli.ts",
+        "sha256": "2e52066af608d701d5c288b4c05cdc85d2f5759fc084ead6836cc88696f57907"
+      },
+      {
+        "path": "src/cancellation-export.ts",
+        "sha256": "08a0968fb787aa0ee2101e7ea15ca4e33201fea3323a90e97a7a6846e082043e"
+      },
+      {
+        "path": "src/cancellation-main.ts",
+        "sha256": "83c65a51d5c4facb61a4344bf60f2b8dc78b9ad877ddd69a94345bb32c855d21"
+      },
+      {
+        "path": "src/cancellation-ui-server.ts",
+        "sha256": "4ba4c190a04df342b5b0a9d2f50c01475d2726116c2f6e7b2d8962b1b93121b4"
+      },
+      {
+        "path": "src/cancellation-work.ts",
+        "sha256": "f4af2fc7f4ccc169fa8f20af9110c0676f1c4ed06e4ef7c8e9522fa8f863e5ed"
+      },
+      {
+        "path": "src/check-contracts.ts",
+        "sha256": "5829b2f94cbff8d653f7fcfee92a48661b0129f0c10879e16aab076df931e3ad"
+      },
+      {
+        "path": "src/consumer-impact-cli.ts",
+        "sha256": "0104eb18f9a032678b9dc8cfd2543ebd8b50471b50672afbf613f41f78d68852"
+      },
+      {
+        "path": "src/consumer-impact-process.ts",
+        "sha256": "073f1adae3d58f41d8dc76ef1519f8833b64a1e0fa4e908f6cf5713a9adc6a41"
+      },
+      {
+        "path": "src/consumer-impact-worker.ts",
+        "sha256": "a6d396e6381e521fe147dc2ee3e6ca9131e5c4f62334918f78d5a5c890cd15f6"
+      },
+      {
+        "path": "src/consumer-impact.ts",
+        "sha256": "60f79c53c06ae670c0b427e9c1db505309b46fb3a2ee106ec51a09a50f349529"
+      },
+      {
+        "path": "src/data.ts",
+        "sha256": "037ebec37d743a7d0236f24b1df7ca4c6e6fe073f20603a811d10f2dd416ddfe"
+      },
+      {
+        "path": "src/evolution-scenarios.ts",
+        "sha256": "16c75312e69e0632240edc40819b4f86dd8f7de192393fe1200fdad1fc021ca1"
+      },
+      {
+        "path": "src/http-server.ts",
+        "sha256": "5069eea1a9de921c90072de5f253337e2f0cb8eec607f1cf9eebbd1d3075127a"
+      },
+      {
+        "path": "src/lab.ts",
+        "sha256": "13a5d3641ae78bb64887d654759c57e49221d431077b1e5a6aa9d0a326ede4eb"
+      },
+      {
+        "path": "src/loaders.ts",
+        "sha256": "9a10c8ea0bfdb7fef778dc728b475000565caaf1b25158d365cd0d556616ebb5"
+      },
+      {
+        "path": "src/main.ts",
+        "sha256": "ef7aadf35e5d3c72fd3a102c035c0d382f1a5c587c42ce01f746155eab4df178"
+      },
+      {
+        "path": "src/run-scenarios.ts",
+        "sha256": "b99accc475c5f8d7b9537b5439c41632fea2238f05c64bd673b491d675bb3d2a"
+      },
+      {
+        "path": "src/scenarios.ts",
+        "sha256": "acb24a5fa7c0479a8f6df60cf7e8aa3f2c3ee8067f7fcdc126c006ff6df2fb58"
+      },
+      {
+        "path": "src/schema-impact-cli.ts",
+        "sha256": "7bc479e3bccf5851657751388f10fcc5bc4180c0d3661cd31b8031122031a460"
+      },
+      {
+        "path": "src/schema-impact.ts",
+        "sha256": "b302fa525af25de065a34e6aa44d56d5ac9f7dd070fc0e448fea096e263d9a69"
+      },
+      {
+        "path": "src/schema.ts",
+        "sha256": "b34e18f9541be85442719fdf7370388af26aebf630e42674864cdb670ccab278"
+      },
+      {
+        "path": "src/shared-work-assessment.ts",
+        "sha256": "210dbc025243ab1cff530d5acf3bd082f1f7dc83831515a71d088b907666779c"
+      },
+      {
+        "path": "src/shared-work-check.ts",
+        "sha256": "d67b0e2f71cc9e80316a1d1128a74287947644652f3e82d694cfdabdbfdfd876"
+      },
+      {
+        "path": "src/shared-work-cli.ts",
+        "sha256": "12dea163b9c6a74ce1a4eb8107a236e67a6d7f2338eec8898d6f76a037fd28c0"
+      },
+      {
+        "path": "src/shared-work-experiment.ts",
+        "sha256": "fe2913de8568ece2ff88c880129272df67e4291c908e4c90861eb77496cf257a"
+      },
+      {
+        "path": "src/shared-work.ts",
+        "sha256": "04d48cc5ae928da726c8e667c83f97649bbd59015dc786424acbe18699098e2d"
+      },
+      {
+        "path": "src/shutdown.ts",
+        "sha256": "0f47f16925318a9342c8e86dd64e59606b2760532d2c23fd68f43b22bf6ef465"
+      },
+      {
+        "path": "src/subgraphs.ts",
+        "sha256": "c40d0274550110624634882971b0dd2d1333bfa1d281a7aaf8f1590fabd4f22b"
+      },
+      {
+        "path": "src/ui-server.ts",
+        "sha256": "00a27d9725edc0b5f9a4cf2d7639dd59c575ae215cd28a766379e97fc7898256"
+      },
+      {
+        "path": "tests/cancellation-evidence.test.ts",
+        "sha256": "b5cc1be1887831d2155f45233a6d098649f6ffec10e790add3c222ac68a57486"
+      },
+      {
+        "path": "tests/cancellation-export.test.ts",
+        "sha256": "b2a7f59584d53b37824023b17c80f1d977fc88b6d0559e6f4ed67fe699c23b2f"
+      },
+      {
+        "path": "tests/cancellation.test.ts",
+        "sha256": "b2f6d651b94cdf955df598fcbca2686f60d51cf0dd2d06adf6e332c516ac476c"
+      },
+      {
+        "path": "tests/consumer-impact.test.ts",
+        "sha256": "772cd2d2db10361eef3a66d89f2ab0fed5b4ade82a0cdfc190f940f4af5caf6b"
+      },
+      {
+        "path": "tests/contracts.test.ts",
+        "sha256": "6aa28131b251665b9b45c21d1ff18213d547042583e78c40895c6c90a60fa988"
+      },
+      {
+        "path": "tests/explorer-locale.test.ts",
+        "sha256": "7bb0e70c30a6992692b5b2ba54d237692f6804b8d0df2a8843815ce034bc6715"
+      },
+      {
+        "path": "tests/integration.test.ts",
+        "sha256": "635ac64bd1a268e37483e12b82213834d4e7823c6d6015ac83d4b69b598a9681"
+      },
+      {
+        "path": "tests/provenance-environment.test.ts",
+        "sha256": "bb07382bc786b10c43e382e2307a5c9b7311c39b6c263faeaaa2f2d31c9999f5"
+      },
+      {
+        "path": "tests/schema-impact.test.ts",
+        "sha256": "51f896f6d73939fc1ba50d79a293e14c02c59c7a8bde9e63b3d14b4f1a32b63a"
+      },
+      {
+        "path": "tests/shared-work-check.test.ts",
+        "sha256": "858527e2a955335779f38943ea4f9eedfb4d7f9551e10fa46a829b3fe8549221"
+      },
+      {
+        "path": "tests/shared-work.test.ts",
+        "sha256": "a97415e88388431d2ca9c5c0017a9f4cecad8215e7ef22eb4e962d59b947e110"
+      },
+      {
+        "path": "tests/shutdown.test.ts",
+        "sha256": "cce94a02f0f4f9c36e6a9ed120fe8cd411c1590f0e9790237c19e40ad37ae1f0"
+      },
+      {
+        "path": "tests/ui-http.test.ts",
+        "sha256": "8f5a1e7092dfb780370435bcffe347519db99f1a3e9be1d525396600c2b6ee60"
+      },
+      {
+        "path": "tsconfig.json",
+        "sha256": "086114af1ee2901b25e603c2a1e7fcc49b4fa7630019e5cf3b8356e80f58e531"
+      }
+    ],
+    "git": {
+      "head": "b5b124c32c9eff395fbd7c929dcf2c709bb3cdc0",
+      "branch": "main",
+      "dirty": false
+    }
+  },
+  "sourceUnchanged": true,
+  "fixture": {
+    "key": "inventory:demo-ceramic",
+    "capacity": 2,
+    "deadlineUpperBoundMs": 5000,
+    "transport": "fixed GraphQL fixture over existing loopback HTTP adapter",
+    "work": "synthetic terminal-stage gates"
+  },
+  "cases": [
+    {
+      "id": "first-caller-ownership",
+      "trace": "owner-leaves",
+      "policy": "first-caller",
+      "requests": [
+        {
+          "label": "A",
+          "requestId": "00000000-0000-4000-8000-000000000001"
+        },
+        {
+          "label": "B",
+          "requestId": "00000000-0000-4000-8000-000000000002"
+        }
+      ],
+      "clients": [
+        {
+          "requestId": "00000000-0000-4000-8000-000000000001",
+          "observation": {
+            "outcome": "aborted"
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000002",
+          "observation": {
+            "outcome": "http",
+            "status": 200,
+            "body": {
+              "errors": [
+                {
+                  "message": "Shared synthetic work was cancelled.",
+                  "locations": [
+                    {
+                      "line": 1,
+                      "column": 21
+                    }
+                  ],
+                  "path": [
+                    "stock"
+                  ],
+                  "extensions": {
+                    "code": "WORK_CANCELLED"
+                  }
+                }
+              ],
+              "data": {
+                "stock": null
+              },
+              "extensions": {
+                "sharedWork": {
+                  "requestId": "00000000-0000-4000-8000-000000000002",
+                  "flightId": 1
+                }
+              }
+            }
+          }
+        }
+      ],
+      "final": {
+        "policy": "first-caller",
+        "capacity": 2,
+        "active": 0,
+        "permits": 0,
+        "registeredFlightId": null,
+        "waiters": 0,
+        "started": 1,
+        "events": [
+          {
+            "sequence": 1,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 2,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 4,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 5,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 6,
+            "kind": "client-abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1,
+            "observation": {
+              "outcome": "aborted"
+            }
+          },
+          {
+            "sequence": 8,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "disconnected"
+          },
+          {
+            "sequence": 9,
+            "kind": "abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "first-caller-left"
+          },
+          {
+            "sequence": 10,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 0,
+            "permits": 1,
+            "settlement": "cancelled"
+          },
+          {
+            "sequence": 11,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 12,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0,
+            "previousFlightId": 1,
+            "deleted": true
+          },
+          {
+            "sequence": 13,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 0,
+            "permits": 0,
+            "reason": "work-cancelled"
+          },
+          {
+            "sequence": 14,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0,
+            "observation": {
+              "outcome": "http",
+              "status": 200,
+              "body": {
+                "errors": [
+                  {
+                    "message": "Shared synthetic work was cancelled.",
+                    "locations": [
+                      {
+                        "line": 1,
+                        "column": 21
+                      }
+                    ],
+                    "path": [
+                      "stock"
+                    ],
+                    "extensions": {
+                      "code": "WORK_CANCELLED"
+                    }
+                  }
+                ],
+                "data": {
+                  "stock": null
+                },
+                "extensions": {
+                  "sharedWork": {
+                    "requestId": "00000000-0000-4000-8000-000000000002",
+                    "flightId": 1
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "executionError": null,
+      "assessment": {
+        "role": "expected-counterexample",
+        "expectedObservationEstablished": true,
+        "checks": [
+          {
+            "name": "policy-independent-evidence-and-complete-drain",
+            "passed": true
+          },
+          {
+            "name": "A-and-B-share-the-initial-flight",
+            "passed": true
+          },
+          {
+            "name": "A-abort-has-separate-server-departure",
+            "passed": true
+          },
+          {
+            "name": "departure-barrier-precedes-terminal-release",
+            "passed": true
+          },
+          {
+            "name": "declared-two-caller-owner-trace",
+            "passed": true
+          },
+          {
+            "name": "one-physical-flight",
+            "passed": true
+          },
+          {
+            "name": "no-foreign-cleanup",
+            "passed": true
+          },
+          {
+            "name": "surviving-B-outcome",
+            "passed": true
+          }
+        ],
+        "analysis": {
+          "evidenceValid": true,
+          "evidenceErrors": [],
+          "allDrained": true,
+          "reconstructed": {
+            "started": 1,
+            "peakActive": 1,
+            "peakPermits": 1
+          },
+          "abortsWithWaiters": [
+            {
+              "sequence": 9,
+              "flightId": 1,
+              "waitingRequestIds": [
+                "00000000-0000-4000-8000-000000000002"
+              ],
+              "cancelledHttpRequestIds": [
+                "00000000-0000-4000-8000-000000000002"
+              ]
+            }
+          ],
+          "foreignCleanups": [],
+          "redundantStarts": [],
+          "retiringOverlaps": []
+        }
+      }
+    },
+    {
+      "id": "independent-waiters",
+      "trace": "owner-leaves",
+      "policy": "owned-lifetimes",
+      "requests": [
+        {
+          "label": "A",
+          "requestId": "00000000-0000-4000-8000-000000000001"
+        },
+        {
+          "label": "B",
+          "requestId": "00000000-0000-4000-8000-000000000002"
+        }
+      ],
+      "clients": [
+        {
+          "requestId": "00000000-0000-4000-8000-000000000001",
+          "observation": {
+            "outcome": "aborted"
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000002",
+          "observation": {
+            "outcome": "http",
+            "status": 200,
+            "body": {
+              "data": {
+                "stock": {
+                  "sku": "demo-ceramic",
+                  "quantity": 8,
+                  "status": "IN_STOCK"
+                }
+              },
+              "extensions": {
+                "sharedWork": {
+                  "requestId": "00000000-0000-4000-8000-000000000002",
+                  "flightId": 1
+                }
+              }
+            }
+          }
+        }
+      ],
+      "final": {
+        "policy": "owned-lifetimes",
+        "capacity": 2,
+        "active": 0,
+        "permits": 0,
+        "registeredFlightId": null,
+        "waiters": 0,
+        "started": 1,
+        "events": [
+          {
+            "sequence": 1,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 2,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 4,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 5,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 6,
+            "kind": "client-abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1,
+            "observation": {
+              "outcome": "aborted"
+            }
+          },
+          {
+            "sequence": 8,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "disconnected"
+          },
+          {
+            "sequence": 9,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 0,
+            "permits": 1,
+            "settlement": "completed"
+          },
+          {
+            "sequence": 10,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 11,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0,
+            "previousFlightId": 1,
+            "deleted": true
+          },
+          {
+            "sequence": 12,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 0,
+            "permits": 0,
+            "reason": "completed"
+          },
+          {
+            "sequence": 13,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0,
+            "observation": {
+              "outcome": "http",
+              "status": 200,
+              "body": {
+                "data": {
+                  "stock": {
+                    "sku": "demo-ceramic",
+                    "quantity": 8,
+                    "status": "IN_STOCK"
+                  }
+                },
+                "extensions": {
+                  "sharedWork": {
+                    "requestId": "00000000-0000-4000-8000-000000000002",
+                    "flightId": 1
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "executionError": null,
+      "assessment": {
+        "role": "control",
+        "expectedObservationEstablished": true,
+        "checks": [
+          {
+            "name": "policy-independent-evidence-and-complete-drain",
+            "passed": true
+          },
+          {
+            "name": "A-and-B-share-the-initial-flight",
+            "passed": true
+          },
+          {
+            "name": "A-abort-has-separate-server-departure",
+            "passed": true
+          },
+          {
+            "name": "departure-barrier-precedes-terminal-release",
+            "passed": true
+          },
+          {
+            "name": "declared-two-caller-owner-trace",
+            "passed": true
+          },
+          {
+            "name": "one-physical-flight",
+            "passed": true
+          },
+          {
+            "name": "no-foreign-cleanup",
+            "passed": true
+          },
+          {
+            "name": "surviving-B-outcome",
+            "passed": true
+          }
+        ],
+        "analysis": {
+          "evidenceValid": true,
+          "evidenceErrors": [],
+          "allDrained": true,
+          "reconstructed": {
+            "started": 1,
+            "peakActive": 1,
+            "peakPermits": 1
+          },
+          "abortsWithWaiters": [],
+          "foreignCleanups": [],
+          "redundantStarts": [],
+          "retiringOverlaps": []
+        }
+      }
+    },
+    {
+      "id": "stale-cleanup",
+      "trace": "replacement",
+      "policy": "unconditional-cleanup",
+      "requests": [
+        {
+          "label": "A",
+          "requestId": "00000000-0000-4000-8000-000000000001"
+        },
+        {
+          "label": "B",
+          "requestId": "00000000-0000-4000-8000-000000000002"
+        },
+        {
+          "label": "C",
+          "requestId": "00000000-0000-4000-8000-000000000003"
+        },
+        {
+          "label": "D",
+          "requestId": "00000000-0000-4000-8000-000000000004"
+        }
+      ],
+      "clients": [
+        {
+          "requestId": "00000000-0000-4000-8000-000000000001",
+          "observation": {
+            "outcome": "aborted"
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000002",
+          "observation": {
+            "outcome": "aborted"
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000004",
+          "observation": {
+            "outcome": "http",
+            "status": 200,
+            "body": {
+              "data": {
+                "stock": {
+                  "sku": "demo-ceramic",
+                  "quantity": 8,
+                  "status": "IN_STOCK"
+                }
+              },
+              "extensions": {
+                "sharedWork": {
+                  "requestId": "00000000-0000-4000-8000-000000000004",
+                  "flightId": 3
+                }
+              }
+            }
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000003",
+          "observation": {
+            "outcome": "http",
+            "status": 200,
+            "body": {
+              "data": {
+                "stock": {
+                  "sku": "demo-ceramic",
+                  "quantity": 8,
+                  "status": "IN_STOCK"
+                }
+              },
+              "extensions": {
+                "sharedWork": {
+                  "requestId": "00000000-0000-4000-8000-000000000003",
+                  "flightId": 2
+                }
+              }
+            }
+          }
+        }
+      ],
+      "final": {
+        "policy": "unconditional-cleanup",
+        "capacity": 2,
+        "active": 0,
+        "permits": 0,
+        "registeredFlightId": null,
+        "waiters": 0,
+        "started": 3,
+        "events": [
+          {
+            "sequence": 1,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 2,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 4,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 5,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 6,
+            "kind": "client-abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1,
+            "observation": {
+              "outcome": "aborted"
+            }
+          },
+          {
+            "sequence": 8,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "disconnected"
+          },
+          {
+            "sequence": 9,
+            "kind": "client-abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 10,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1,
+            "observation": {
+              "outcome": "aborted"
+            }
+          },
+          {
+            "sequence": 11,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "reason": "disconnected"
+          },
+          {
+            "sequence": 12,
+            "kind": "flight-retiring",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 13,
+            "kind": "registry-detached",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "previousFlightId": 1,
+            "deleted": true
+          },
+          {
+            "sequence": 14,
+            "kind": "abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "reason": "no-waiters"
+          },
+          {
+            "sequence": 15,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 16,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 17,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 1,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 18,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 1,
+            "permits": 2,
+            "settlement": "cancelled"
+          },
+          {
+            "sequence": 19,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 20,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "previousFlightId": 2,
+            "deleted": true
+          },
+          {
+            "sequence": 21,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 22,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 3,
+            "registeredFlightId": 3,
+            "waiters": 0,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 23,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": 3,
+            "registeredFlightId": 3,
+            "waiters": 1,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 24,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 3,
+            "registeredFlightId": 3,
+            "waiters": 1,
+            "active": 1,
+            "permits": 2,
+            "settlement": "completed"
+          },
+          {
+            "sequence": 25,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 3,
+            "registeredFlightId": 3,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 26,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 3,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1,
+            "previousFlightId": 3,
+            "deleted": true
+          },
+          {
+            "sequence": 27,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": 3,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "reason": "completed"
+          },
+          {
+            "sequence": 28,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 0,
+            "permits": 1,
+            "settlement": "completed"
+          },
+          {
+            "sequence": 29,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 30,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0,
+            "previousFlightId": null,
+            "deleted": false
+          },
+          {
+            "sequence": 31,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 0,
+            "permits": 0,
+            "reason": "completed"
+          },
+          {
+            "sequence": 32,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0,
+            "observation": {
+              "outcome": "http",
+              "status": 200,
+              "body": {
+                "data": {
+                  "stock": {
+                    "sku": "demo-ceramic",
+                    "quantity": 8,
+                    "status": "IN_STOCK"
+                  }
+                },
+                "extensions": {
+                  "sharedWork": {
+                    "requestId": "00000000-0000-4000-8000-000000000004",
+                    "flightId": 3
+                  }
+                }
+              }
+            }
+          },
+          {
+            "sequence": 33,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0,
+            "observation": {
+              "outcome": "http",
+              "status": 200,
+              "body": {
+                "data": {
+                  "stock": {
+                    "sku": "demo-ceramic",
+                    "quantity": 8,
+                    "status": "IN_STOCK"
+                  }
+                },
+                "extensions": {
+                  "sharedWork": {
+                    "requestId": "00000000-0000-4000-8000-000000000003",
+                    "flightId": 2
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "executionError": null,
+      "assessment": {
+        "role": "expected-counterexample",
+        "expectedObservationEstablished": true,
+        "checks": [
+          {
+            "name": "policy-independent-evidence-and-complete-drain",
+            "passed": true
+          },
+          {
+            "name": "A-and-B-share-the-initial-flight",
+            "passed": true
+          },
+          {
+            "name": "A-abort-has-separate-server-departure",
+            "passed": true
+          },
+          {
+            "name": "departure-barrier-precedes-terminal-release",
+            "passed": true
+          },
+          {
+            "name": "declared-four-caller-replacement-trace",
+            "passed": true
+          },
+          {
+            "name": "A-and-B-aborted-C-and-D-received-normal-data",
+            "passed": true
+          },
+          {
+            "name": "retiring-old-work-overlaps-new-flight-with-permits-held",
+            "passed": true
+          },
+          {
+            "name": "old-cleanup-observed-before-late-D",
+            "passed": true
+          },
+          {
+            "name": "bounded-capacity-is-not-deduplication",
+            "passed": true
+          },
+          {
+            "name": "late-request-decision-and-physical-execution-count",
+            "passed": true
+          }
+        ],
+        "analysis": {
+          "evidenceValid": true,
+          "evidenceErrors": [],
+          "allDrained": true,
+          "reconstructed": {
+            "started": 3,
+            "peakActive": 2,
+            "peakPermits": 2
+          },
+          "abortsWithWaiters": [],
+          "foreignCleanups": [
+            {
+              "sequence": 20,
+              "cleaningFlightId": 1,
+              "removedFlightId": 2,
+              "waitingRequestIds": [
+                "00000000-0000-4000-8000-000000000003"
+              ]
+            }
+          ],
+          "redundantStarts": [
+            {
+              "sequence": 22,
+              "newFlightId": 3,
+              "unregisteredFlightId": 2,
+              "cleanupSequence": 20,
+              "successfulOriginalRequestIds": [
+                "00000000-0000-4000-8000-000000000003"
+              ],
+              "successfulNewRequestIds": [
+                "00000000-0000-4000-8000-000000000004"
+              ]
+            }
+          ],
+          "retiringOverlaps": [
+            {
+              "sequence": 16,
+              "retiringFlightId": 1,
+              "newFlightId": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "identity-cleanup",
+      "trace": "replacement",
+      "policy": "owned-lifetimes",
+      "requests": [
+        {
+          "label": "A",
+          "requestId": "00000000-0000-4000-8000-000000000001"
+        },
+        {
+          "label": "B",
+          "requestId": "00000000-0000-4000-8000-000000000002"
+        },
+        {
+          "label": "C",
+          "requestId": "00000000-0000-4000-8000-000000000003"
+        },
+        {
+          "label": "D",
+          "requestId": "00000000-0000-4000-8000-000000000004"
+        }
+      ],
+      "clients": [
+        {
+          "requestId": "00000000-0000-4000-8000-000000000001",
+          "observation": {
+            "outcome": "aborted"
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000002",
+          "observation": {
+            "outcome": "aborted"
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000003",
+          "observation": {
+            "outcome": "http",
+            "status": 200,
+            "body": {
+              "data": {
+                "stock": {
+                  "sku": "demo-ceramic",
+                  "quantity": 8,
+                  "status": "IN_STOCK"
+                }
+              },
+              "extensions": {
+                "sharedWork": {
+                  "requestId": "00000000-0000-4000-8000-000000000003",
+                  "flightId": 2
+                }
+              }
+            }
+          }
+        },
+        {
+          "requestId": "00000000-0000-4000-8000-000000000004",
+          "observation": {
+            "outcome": "http",
+            "status": 200,
+            "body": {
+              "data": {
+                "stock": {
+                  "sku": "demo-ceramic",
+                  "quantity": 8,
+                  "status": "IN_STOCK"
+                }
+              },
+              "extensions": {
+                "sharedWork": {
+                  "requestId": "00000000-0000-4000-8000-000000000004",
+                  "flightId": 2
+                }
+              }
+            }
+          }
+        }
+      ],
+      "final": {
+        "policy": "owned-lifetimes",
+        "capacity": 2,
+        "active": 0,
+        "permits": 0,
+        "registeredFlightId": null,
+        "waiters": 0,
+        "started": 2,
+        "events": [
+          {
+            "sequence": 1,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 2,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 3,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 4,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 5,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 6,
+            "kind": "client-abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 7,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1,
+            "observation": {
+              "outcome": "aborted"
+            }
+          },
+          {
+            "sequence": 8,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000001",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 1,
+            "active": 1,
+            "permits": 1,
+            "reason": "disconnected"
+          },
+          {
+            "sequence": 9,
+            "kind": "client-abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 10,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": null,
+            "registeredFlightId": 1,
+            "waiters": null,
+            "active": 1,
+            "permits": 1,
+            "observation": {
+              "outcome": "aborted"
+            }
+          },
+          {
+            "sequence": 11,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000002",
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "reason": "disconnected"
+          },
+          {
+            "sequence": 12,
+            "kind": "flight-retiring",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 1,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 13,
+            "kind": "registry-detached",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "previousFlightId": 1,
+            "deleted": true
+          },
+          {
+            "sequence": 14,
+            "kind": "abort-requested",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "reason": "no-waiters"
+          },
+          {
+            "sequence": 15,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 16,
+            "kind": "flight-started",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 17,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 1,
+            "active": 2,
+            "permits": 2
+          },
+          {
+            "sequence": 18,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 1,
+            "permits": 2,
+            "settlement": "cancelled"
+          },
+          {
+            "sequence": 19,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 20,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 1,
+            "registeredFlightId": 2,
+            "waiters": 0,
+            "active": 1,
+            "permits": 1,
+            "previousFlightId": 2,
+            "deleted": false
+          },
+          {
+            "sequence": 21,
+            "kind": "client-invoked",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": null,
+            "registeredFlightId": 2,
+            "waiters": null,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 22,
+            "kind": "caller-joined",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 2,
+            "active": 1,
+            "permits": 1
+          },
+          {
+            "sequence": 23,
+            "kind": "work-settled",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 2,
+            "active": 0,
+            "permits": 1,
+            "settlement": "completed"
+          },
+          {
+            "sequence": 24,
+            "kind": "permit-released",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": 2,
+            "waiters": 2,
+            "active": 0,
+            "permits": 0
+          },
+          {
+            "sequence": 25,
+            "kind": "registry-cleanup",
+            "key": "inventory:demo-ceramic",
+            "requestId": null,
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 2,
+            "active": 0,
+            "permits": 0,
+            "previousFlightId": 2,
+            "deleted": true
+          },
+          {
+            "sequence": 26,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 1,
+            "active": 0,
+            "permits": 0,
+            "reason": "completed"
+          },
+          {
+            "sequence": 27,
+            "kind": "caller-left",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": 2,
+            "registeredFlightId": null,
+            "waiters": 0,
+            "active": 0,
+            "permits": 0,
+            "reason": "completed"
+          },
+          {
+            "sequence": 28,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000003",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0,
+            "observation": {
+              "outcome": "http",
+              "status": 200,
+              "body": {
+                "data": {
+                  "stock": {
+                    "sku": "demo-ceramic",
+                    "quantity": 8,
+                    "status": "IN_STOCK"
+                  }
+                },
+                "extensions": {
+                  "sharedWork": {
+                    "requestId": "00000000-0000-4000-8000-000000000003",
+                    "flightId": 2
+                  }
+                }
+              }
+            }
+          },
+          {
+            "sequence": 29,
+            "kind": "client-result",
+            "key": "inventory:demo-ceramic",
+            "requestId": "00000000-0000-4000-8000-000000000004",
+            "flightId": null,
+            "registeredFlightId": null,
+            "waiters": null,
+            "active": 0,
+            "permits": 0,
+            "observation": {
+              "outcome": "http",
+              "status": 200,
+              "body": {
+                "data": {
+                  "stock": {
+                    "sku": "demo-ceramic",
+                    "quantity": 8,
+                    "status": "IN_STOCK"
+                  }
+                },
+                "extensions": {
+                  "sharedWork": {
+                    "requestId": "00000000-0000-4000-8000-000000000004",
+                    "flightId": 2
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      "executionError": null,
+      "assessment": {
+        "role": "control",
+        "expectedObservationEstablished": true,
+        "checks": [
+          {
+            "name": "policy-independent-evidence-and-complete-drain",
+            "passed": true
+          },
+          {
+            "name": "A-and-B-share-the-initial-flight",
+            "passed": true
+          },
+          {
+            "name": "A-abort-has-separate-server-departure",
+            "passed": true
+          },
+          {
+            "name": "departure-barrier-precedes-terminal-release",
+            "passed": true
+          },
+          {
+            "name": "declared-four-caller-replacement-trace",
+            "passed": true
+          },
+          {
+            "name": "A-and-B-aborted-C-and-D-received-normal-data",
+            "passed": true
+          },
+          {
+            "name": "retiring-old-work-overlaps-new-flight-with-permits-held",
+            "passed": true
+          },
+          {
+            "name": "old-cleanup-observed-before-late-D",
+            "passed": true
+          },
+          {
+            "name": "bounded-capacity-is-not-deduplication",
+            "passed": true
+          },
+          {
+            "name": "late-request-decision-and-physical-execution-count",
+            "passed": true
+          }
+        ],
+        "analysis": {
+          "evidenceValid": true,
+          "evidenceErrors": [],
+          "allDrained": true,
+          "reconstructed": {
+            "started": 2,
+            "peakActive": 2,
+            "peakPermits": 2
+          },
+          "abortsWithWaiters": [],
+          "foreignCleanups": [],
+          "redundantStarts": [],
+          "retiringOverlaps": [
+            {
+              "sequence": 16,
+              "retiringFlightId": 1,
+              "newFlightId": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Separate HTTP requests share one synthetic job behind a fixed GraphQL fixture. The Federation gateway, per-request DataLoaders and existing four-policy experiment are unchanged.",
+    "Client abort and server-observed departure are distinct events. Replacement starts only after the recorded departure/detachment barrier.",
+    "Gates select an allowed asynchronous ordering; they do not measure database cancellation, production latency, throughput or costs.",
+    "The synthetic task checks its controller at the released terminal gate. An abort request alone does not physically settle it; this is not a measurement of cancellation latency.",
+    "These traces observe server departure before releasing work. In general a client may abort after work completes but before the response arrives; a client abort alone does not prove server-side cancellation.",
+    "Retiring work keeps capacity until actual settlement; it may overlap a new joinable flight. Capacity is local to one process.",
+    "In the replacement trace A/B are cancelled; C/D receive normal stock data. Their response flight identities can differ under the incorrect cleanup policy.",
+    "No cache, TTL, cross-replica deduplication, unknown-job discovery, tenant boundary or exactly-once guarantee is implemented.",
+    "Recorded transitions and source hashes are inspection aids, not proofs of uninstrumented work or execution attestations."
+  ],
+  "expectedObservationsEstablished": true
+}

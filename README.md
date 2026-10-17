@@ -38,6 +38,8 @@ These are observed values from a local run, not constants embedded in the displa
 
 [Inspect the recorded event timelines](docs/observed-trace.md): two policies, the original JSON, and a reproducible figure from revision `ff47d27`.
 
+**When callers share work:** [normal responses can hide duplicate execution](docs/shared-work.md). A fixed HTTP experiment separates caller cancellation, physical settlement and registry cleanup.
+
 ## Inspect the engineering judgment
 
 - **Follow the lifetime:** [the case study](docs/cancellation-debt.md) explains response closure, explicit signal propagation and the point where a permit may be released.
