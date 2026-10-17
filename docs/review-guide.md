@@ -1,5 +1,7 @@
 # Review the federation explorer
 
+[한국어](review-guide.ko.md) · [Run the explorer](federation-explorer.md) · [Project overview](../README.md)
+
 This guide covers the original query explorer (`pnpm dev`). For permit ownership and cooperative cancellation, follow the separate [Cancellation Debt case study](cancellation-debt.md).
 
 ## 1. Break the visible product

@@ -1,5 +1,7 @@
 # Which consumer does a schema change affect?
 
+[한국어](schema-evolution.ko.md) · [Run the explorer](federation-explorer.md) · [Project overview](../README.md)
+
 Run a hypothetical change against the checked-in API baseline and named consumer operations:
 
 ```sh

@@ -1,6 +1,6 @@
 # The federation explorer
 
-[Cancellation Debt](../README.md) · [한국어 프로젝트 소개](../README.ko.md)
+[한국어](federation-explorer.ko.md) · [Cancellation Debt](../README.md)
 
 **One query. Three domains. Failures you can inspect.**
 
@@ -120,12 +120,6 @@ Run `pnpm impact` to compare seven in-memory schema changes and identify the aff
 - No full query-cost controls, rate limits, circuit breakers, distributed cancellation or durable tracing. A 12-SKU bound is not a general GraphQL complexity limit.
 - Apollo recommends GraphOS Router for supergraphs. This lab intentionally uses the Node gateway to keep setup, customization and tests inspectable in one runtime. It does not recommend that choice for every deployment.
 - Upstream dependency advisories and the current local exposure assessment are recorded in [security notes](../SECURITY.md). Do not expose this lab on the public internet.
-
-## 한국어 안내
-
-하나의 상품 조회가 카탈로그·재고·판매자 서브그래프를 어떻게 결합하는지 직접 실행해 보는 개인 프로젝트입니다. 재고 조회만 실패해도 상품명과 판매자 정보는 유지하고, **품절·정보 없음·조회 실패를 구분**합니다. 요청별 DataLoader, 중복 키 처리, 부분 응답, 타임아웃, 스키마·클라이언트 쿼리 호환성을 테스트로 검증합니다.
-
-모든 데이터와 장애 시나리오는 가상입니다. 실제 회사의 코드·설계·정책·지표를 재현하지 않았으며, 이 예제의 동작을 업무 성과나 운영 규모로 주장하지 않습니다.
 
 ## References
 

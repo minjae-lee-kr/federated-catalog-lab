@@ -1,5 +1,7 @@
 # Design decisions and the edges they expose
 
+[한국어](design.ko.md) · [Run the explorer](federation-explorer.md) · [Project overview](../README.md)
+
 ## 1. Federation is an ownership tool, not a free performance improvement
 
 Catalog owns the product record. Inventory contributes availability through the same SKU key. Merchant details belong to a separate entity. The reference-only Merchant declaration in catalog uses `resolvable: false`: catalog can point at a merchant but does not pretend to resolve its fields.
