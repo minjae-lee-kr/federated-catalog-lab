@@ -2,7 +2,7 @@
 
 [한국어](cancellation-debt.ko.md) · [Project overview](../README.md)
 
-The interesting failure is not that a slow dependency times out. It is that a concurrency limiter can appear healthy while the work it claims to bound is still accumulating.
+A slow dependency can keep working after its caller times out. If the limiter returns the permit at that point, its counter can look healthy while the work it should limit keeps accumulating.
 
 This is the primary experiment in Federated Catalog Lab. It uses an Apollo Federation gateway and three HTTP subgraphs. Inventory work holds a slot with a synthetic timer; the HTTP requests, dropped connections and cancellation propagation are real. This is not a database or production-load benchmark.
 
@@ -39,7 +39,7 @@ The second row is deliberately wrong. It releases admission ownership when the w
 
 The third row keeps the permit until the timer actually settles. It maintains the physical bound even though cancellation is ignored. The cost is visible: additional attempts are rejected while abandoned work occupies the slots. The fourth row cancels a timer that explicitly supports cancellation, then releases its permit after that timer settles.
 
-**The permit belongs to the underlying operation, not to the lifetime of the caller's wait.** A `Promise.race` that returns a timeout and releases a permit in the caller's `finally` can make the same mistake if the other promise continues running.
+**Release the permit when the underlying operation actually settles.** A `Promise.race` that returns a timeout and releases a permit in the caller's `finally` can make the same mistake if the other promise continues running.
 
 ## Where cancellation travels—and where it does not
 

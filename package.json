@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Cancellation Debt: expose the gap between timed-out callers, concurrency permits and unfinished work over real Apollo Federation HTTP requests.",
+  "description": "Recorded Apollo Federation experiments: cancellation, partial responses, generated types and client cache behavior over real HTTP.",
   "engines": {
     "node": ">=24.19.0 <25"
   },
@@ -19,6 +19,7 @@
     "consumer-impact": "node src/consumer-impact-cli.ts",
     "shared-work": "node src/shared-work-cli.ts",
     "batch-failure": "node src/batch-failure-cli.ts",
+    "client-cache": "node src/client-cache-cli.ts",
     "debt": "node src/cancellation-cli.ts",
     "debt:ui": "node src/cancellation-main.ts",
     "debt:export": "node src/cancellation-export-cli.ts",
@@ -26,13 +27,15 @@
     "verify": "pnpm typecheck && pnpm contracts && pnpm test && pnpm build"
   },
   "dependencies": {
+    "@apollo/client": "4.3.3",
     "@apollo/composition": "2.14.4",
     "@apollo/federation-internals": "2.14.4",
     "@apollo/gateway": "2.14.4",
     "@apollo/server": "5.5.1",
     "@apollo/subgraph": "2.14.4",
     "dataloader": "2.2.3",
-    "graphql": "16.14.2"
+    "graphql": "16.14.2",
+    "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@graphql-codegen/core": "6.2.2",

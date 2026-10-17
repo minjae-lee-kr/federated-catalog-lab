@@ -71,7 +71,7 @@ const messages = {
     footer: "A small lab, with inspectable decisions.",
     footerBody:
       "Original personal project. All records, faults and timing thresholds are synthetic. No production architecture or performance claims.",
-    language: "Switch to Korean",
+    language: "한국어 — Switch to Korean",
     fetchCount: (n) => `${n} SUBGRAPH FETCH${n === 1 ? "" : "ES"}`,
     batchCount: (batches, keys) =>
       `${batches} batch${batches === 1 ? "" : "es"} · ${keys} unique keys`,
@@ -167,7 +167,7 @@ const messages = {
     footer: "작은 실험에서 구현의 판단을 확인합니다.",
     footerBody:
       "독립적인 개인 프로젝트입니다. 데이터·오류·시간 설정은 모두 가상이며, 운영 구조나 실서비스 성능을 주장하지 않습니다.",
-    language: "영어로 전환",
+    language: "English — 영어로 전환",
     fetchCount: (n) => `서브그래프 호출 ${n}건`,
     batchCount: (batches, keys) => `배치 ${batches}건 · 고유 키 ${keys}개`,
     productMissing: (n) => `${n}번째 상품을 찾지 못했습니다`,

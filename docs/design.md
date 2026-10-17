@@ -16,7 +16,7 @@ Schemas are composed from local source before the gateway starts. This avoids ru
 
 `Product.availability` is nullable. Failing inventory must not imply that the product disappeared or that stock is zero. A returned quantity of zero means sold out; a null inventory result means unknown. The accompanying GraphQL errors distinguish an unavailable dependency from the intentional missing-record scenario.
 
-This design does not make `null` sufficient for every product. A production API could use an explicit result union or a typed freshness/availability object if clients need richer status. That decision should follow product needs rather than wrapping every field by default.
+If clients need more detail than `null` supplies, an API can use an explicit result union or an object carrying freshness and availability status. Choose the shape around the information clients need; adding a wrapper to every field is a separate decision.
 
 ## 3. A loader cache belongs to one request
 

@@ -1,16 +1,24 @@
-# Cancellation Debt
+# Federated Catalog Lab
 
 [English](README.md) · [한국어](README.ko.md)
+
+Three experiments use the same synthetic catalog, inventory and merchant APIs to follow failures across the server and client. They use real Apollo Gateway and HTTP subgraphs in an independent personal lab.
+
+- **What if work outlives a timeout?** The Cancellation Debt experiment below compares when to return an execution slot.
+- **What survives one failed inventory lookup?** [Compare partial responses](https://minjae-lee-kr.github.io/research/partial-data/) under different batch-error and nullability choices. Reproduce: `pnpm batch-failure`.
+- **Does an error-free cache read mean recovery?** The [client cache experiment](docs/client-cache.md) follows error policies and cache writes into the next query. Reproduce: `pnpm client-cache`.
+
+## Cancellation Debt
 
 **The request ended. The work did not.**
 
 A product page can stop waiting for inventory while the inventory work continues. If the limiter returns that work's execution slot on timeout, it can admit more work while the previous work still consumes capacity.
 
-This personal lab combines fictional catalog, inventory and merchant APIs through Apollo Federation. It compares four policies over real HTTP calls. Execution slots (permits) are used to limit how many jobs may run at once; the checker reconstructs active jobs and held slots from events and correlates them with HTTP responses. The deliberately wrong policy can show **one held permit while four jobs are still running**.
+Four policies are compared over real HTTP calls. Execution slots (permits) are used to limit how many jobs may run at once; the checker reconstructs active jobs and held slots from events and correlates them with HTTP responses. The deliberately wrong policy can show **one held permit while four jobs are still running**.
 
 **Return the execution slot when the work actually ends.** Holding it keeps the limit meaningful, but abandoned work occupies capacity and new requests may be rejected. Cooperative cancellation helps only when the work responds to it; here that work is a timer, with all services in one Node process.
 
-## Run the experiment
+## Run the cancellation experiment
 
 Requires Node.js **24.19.0 or newer in the 24.x line** and pnpm **11.25.0**. Installation enforces this minimum; CI runs on 24.19.0. No credentials, Docker or external services.
 

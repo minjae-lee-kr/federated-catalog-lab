@@ -51,13 +51,13 @@ The additive control also checks that an unselected field leaves both operation 
 
 For the nullable-name and enum candidates, a separate control compiles the same consumers against **baseline generated types**. All four compile. The report records different `candidateSchemaSha256` and `generatedFromSchemaSha256` values so the stale result cannot be confused with regeneration.
 
-This is a deliberately stale build input, not a compiler defect. A green check covers the types supplied to it. It cannot establish compatibility with a schema that never reached those types.
+This control deliberately supplies stale generated types. The compiler checks those types; a successful build cannot establish compatibility with schema changes they do not contain.
 
 ## `futureProofEnums` changes the starting contract
 
 The experiment also generates the unchanged and enum-extended schemas with `futureProofEnums: true`. In this pinned configuration, Code Generator adds `"%future added value"` to the enum union. The closed exhaustive switch therefore fails **even against the unchanged schema**; the stock fallback compiles in both cases.
 
-That result is a generator-policy choice, separate from the `PREORDER` schema change. The catch-all type entry does not decode an unknown wire value or rewrite it into the sentinel string. Consumer code still needs a runtime handling policy.
+That result is a generator-policy choice, separate from the `PREORDER` schema change. The catch-all type entry does not decode an unknown wire value or rewrite it into the sentinel string. The consumer still has to decide how to handle an unfamiliar value at runtime.
 
 ## What the evidence can establish
 
@@ -65,7 +65,7 @@ That result is a generator-policy choice, separate from the `PREORDER` schema ch
 
 The runner snapshots and verifies its schema, operation and consumer inputs. Each generator/compiler child has a 30-second limit and bounded output. On interruption, the runner requests termination of the owned process tree and waits for the direct child to close before temporary-file cleanup. Expected type errors must match the complete diagnostic from the pinned compiler. Extra stdout or any stderr is a failed experiment, not evidence of the intended type error.
 
-The fixtures accept a non-null `Product` or `availability` value via `NonNullable`; handling an absent product or availability at the caller is outside their scope. No query response is fetched, no runtime failure is demonstrated, and no production or employer result is claimed. The finding is specific: **a valid operation can generate a changed type that an unchanged, stricter consumer no longer accepts**.
+The fixtures accept a non-null `Product` or `availability` value via `NonNullable`; handling an absent product or availability at the caller is outside their scope. No query response is fetched, no runtime failure is demonstrated, and no production or employer result is claimed. **A valid operation can generate a changed type that an unchanged, stricter consumer no longer accepts.**
 
 Implementation: [runner](../src/consumer-impact.ts), [generator worker](../src/consumer-impact-worker.ts), [process boundary](../src/consumer-impact-process.ts), [tests](../tests/consumer-impact.test.ts).
 
