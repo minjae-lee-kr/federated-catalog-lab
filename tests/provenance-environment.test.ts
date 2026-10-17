@@ -83,4 +83,3 @@ test('provenance ignores ambient Git redirection and trace output while preservi
     await rm(directory, { recursive: true, force: true, maxRetries: 3 });
   }
 });
-
