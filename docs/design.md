@@ -26,7 +26,7 @@ For real persistence, authorization context belongs in the loader boundary and c
 
 ## 4. A timeout bounds waiting; it does not cancel a remote job
 
-This section describes the original explorer. The experimental branch adds an explicit cancellation chain and an intentionally broken permit-lifetime control; [the separate case study](cancellation-debt.md) records what those do and do not establish.
+This section describes the original explorer. The separate cancellation experiment adds an explicit cancellation chain and an intentionally incorrect permit-lifetime control; [the case study](cancellation-debt.md) records what those do and do not establish.
 
 The gateway fetcher uses `AbortSignal.timeout`. An injected inventory delay triggers a timeout while catalog and merchant results survive. The error code is deliberately separate from a GraphQL resolver failure.
 

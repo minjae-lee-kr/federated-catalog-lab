@@ -10,7 +10,7 @@ A small Apollo Federation server project that makes entity composition, request-
 
 All products, merchants, faults and timing thresholds are invented. This is an original personal lab, not a reproduction of an employer's systems, a production template or a performance claim.
 
-## Run it in three minutes
+## Run the explorer
 
 Requires **Node.js 24** and **pnpm 11.25.0**. No Docker, database, API key, cloud account or external service is needed after dependency installation.
 
@@ -56,7 +56,7 @@ flowchart TD
     M --> ML[Request-scoped merchant loader]
 ```
 
-The gateway uses a supergraph composed from checked-in SDL. It does not introspect running subgraphs to discover an unchecked schema. At runtime, the catalog fetch supplies representations for later entity fetches. Inventory and merchant fields can then resolve independently. All processes live in one Node process for easy startup, but subgraph communication is actual HTTP.
+The gateway uses a supergraph composed from checked-in SDL. It does not introspect running subgraphs to discover an unchecked schema. At runtime, the catalog fetch supplies representations for later entity fetches. Inventory and merchant fields can then resolve independently. The gateway and three subgraph servers share one Node process, but communicate over actual HTTP.
 
 The stores are small in-memory arrays, not simulated databases. Batch counts prove how this code schedules and deduplicates work; they do **not** measure database performance or production capacity.
 
