@@ -44,8 +44,10 @@ These are observed values from a local run, not constants embedded in the displa
 
 - **Trace cancellation to the work:** [the case study](docs/cancellation-debt.md) follows response closure, signal propagation and the point where a permit may be released.
 - **Test the checker:** [the independent event checker](src/cancellation-check.ts) rejects missing settlements, mismatched request identities and inconsistent counters. Real HTTP controls also corrupt response/work identity to test the checker.
-- **Choose what survives failure:** [one failed key, three different response boundaries](docs/batch-failure.md) compares per-key errors, whole-batch rejection and a non-null field over real HTTP. All three pass contract checks and return HTTP 200; they retain different data.
+- **Choose what survives failure:** [one failed key, three different response boundaries](docs/batch-failure.md) compares per-key errors, whole-batch rejection and a non-null field over real HTTP. Federation composition and query validation succeed in all three runs; HTTP 200 responses still retain different data. [Compare the recorded product cards](https://minjae-lee-kr.github.io/research/partial-data/).
 - **Explore the wider API:** the [federation explorer](docs/federation-explorer.md) covers entity composition and request-scoped batching. Follow [schema changes](docs/schema-evolution.md) through [type generation and compilation of unchanged consumers](docs/consumer-impact.md).
+
+[Design choices and tradeoffs](docs/design.md) · [Explorer review path](docs/review-guide.md)
 
 ```sh
 pnpm verify       # TypeScript, schema contracts, tests and build
