@@ -29,3 +29,9 @@ jobs:
         run: pnpm --dir experiments/react-recheck build
       - name: Test fixed React request contracts
         run: pnpm --dir experiments/react-recheck test
+      - name: Install attempt ownership harness
+        run: pnpm --dir experiments/react-attempts install --frozen-lockfile
+      - name: Build attempt ownership harness
+        run: pnpm --dir experiments/react-attempts build
+      - name: Test attempt ownership contracts
+        run: pnpm --dir experiments/react-attempts test

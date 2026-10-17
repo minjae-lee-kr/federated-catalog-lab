@@ -2,13 +2,15 @@
 
 [English](README.md) · [한국어](README.ko.md)
 
-The experiments use the same synthetic catalog, inventory and merchant APIs to follow failures across the server and client. They use real Apollo Gateway and HTTP subgraphs in an independent personal lab.
+These independent experiments follow failures across synthetic catalog, inventory and merchant APIs. The server experiments use real Apollo Gateway and HTTP subgraphs. The React follow-ups inspect client state and cache behavior; the response-order experiment uses a separate controlled HTTP fixture server.
 
 - **What if work outlives a timeout?** The Cancellation Debt experiment below compares when to return an execution slot.
 - **What survives one failed inventory lookup?** [Compare partial responses](https://minjae-lee-kr.github.io/research/partial-data/) under different batch-error and nullability choices. Reproduce: `pnpm batch-failure`.
 - **Does an error-free cache read mean recovery?** The [client cache experiment](docs/client-cache.md) follows error policies and cache writes into the next query. Reproduce: `pnpm client-cache`.
 
 - **Does a cleared error mean a successful recheck?** The [React follow-up](docs/react-recheck.md) compares Promise, hook and actual DOM observations, then examines the cost of retaining confirmation context. [Run the experiment](experiments/react-recheck/README.md).
+
+For the React implementation follow-up, [compare guarded state with guarded cache writes](docs/react-attempts.md). Product changes, warehouse variables, A → B → A and a cache read after failure are exercised with explicitly released HTTP responses. [Run it locally](experiments/react-attempts/README.md).
 
 ## Cancellation Debt
 
