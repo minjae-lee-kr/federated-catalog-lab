@@ -8,7 +8,8 @@
   --accent: #a9e9d7;
   --warm: #f0c689;
   --danger: #ffb5b3;
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family:
+    Inter, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -21,12 +22,26 @@ body {
   line-height: 1.5;
 }
 .topbar {
-  height: 87px;
+  min-height: 87px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--line);
   padding: 0 6vw;
+  gap: 16px;
+}
+.topbar-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.language {
+  min-width: 78px;
+  min-height: 44px;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
 }
 .brand {
   color: var(--text);
@@ -53,7 +68,7 @@ body {
   align-items: center;
   gap: 9px;
 }
-.local > span {
+.local > .local-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -82,7 +97,7 @@ h1 {
   letter-spacing: -4px;
   margin: 0 0 24px;
 }
-h1 span {
+h1 .heading-accent {
   color: var(--accent);
 }
 .lede {
@@ -166,7 +181,7 @@ button {
   white-space: nowrap;
   min-width: 126px;
 }
-button span {
+button .run-arrow {
   margin-left: 18px;
 }
 button:disabled {
@@ -184,9 +199,10 @@ button:disabled {
   align-items: center;
   gap: 6px;
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 .check input {
+  flex-shrink: 0;
   accent-color: var(--accent);
   width: 16px;
   height: 16px;
@@ -439,8 +455,19 @@ footer p {
 }
 @media (max-width: 600px) {
   .topbar {
-    padding: 0 22px;
-    height: 70px;
+    padding: 12px 20px;
+    min-height: 70px;
+  }
+  .brand {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .mark {
+    font-size: 20px;
+    margin-right: 7px;
+  }
+  .topbar-tools {
+    gap: 0;
   }
   .local {
     display: none;
@@ -488,6 +515,19 @@ footer p {
     margin-left: 18px;
     margin-right: 18px;
   }
+}
+html[lang="ko"] h1 {
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+  word-break: keep-all;
+}
+html[lang="ko"] .lede,
+html[lang="ko"] .note,
+html[lang="ko"] .principles p,
+html[lang="ko"] .trace-row .batch,
+html[lang="ko"] .trace-foot {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 .graph .inactive {
   opacity: 0.28;

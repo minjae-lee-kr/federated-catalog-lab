@@ -13,58 +13,99 @@
   </head>
   <body>
     <header class="topbar">
-      <a href="/" class="brand"
+      <a
+        href="/"
+        class="brand"
+        data-i18n-label="home"
+        aria-label="Federated Catalog Lab home"
         ><span class="mark" aria-hidden="true">◈</span> FIELDWORK
         <span class="brand-light">/ FEDERATION</span></a
-      ><span class="local"
-        ><span aria-hidden="true"></span> LOCAL LAB · SYNTHETIC DATA</span
       >
+      <div class="topbar-tools">
+        <span class="local"
+          ><span class="local-dot" aria-hidden="true"></span
+          ><span data-i18n="local">LOCAL LAB · SYNTHETIC DATA</span></span
+        >
+        <button
+          id="language"
+          class="language"
+          type="button"
+          lang="ko"
+          aria-label="Switch to Korean"
+        >
+          한국어
+        </button>
+      </div>
     </header>
     <main>
       <section class="hero">
-        <p class="eyebrow">GRAPHQL API ENGINEERING / 02</p>
-        <h1>One graph.<br /><span>Honest failures.</span></h1>
-        <p class="lede">
+        <p class="eyebrow" data-i18n="eyebrow">GRAPHQL API ENGINEERING / 02</p>
+        <h1>
+          <span data-i18n="heading">One graph.</span><br /><span
+            class="heading-accent"
+            data-i18n="headingAccent"
+            >Honest failures.</span
+          >
+        </h1>
+        <p class="lede" data-i18n="lede">
           Three domains meet in a single product query. Interrupt one dependency
           and inspect exactly what survives.
         </p>
         <div class="tags">
-          <span>Apollo Federation 2</span><span>Request-scoped batching</span
-          ><span>Executable contracts</span>
+          <span>Apollo Federation 2</span
+          ><span data-i18n="batching">Request-scoped batching</span
+          ><span data-i18n="contracts">Executable contracts</span>
         </div>
       </section>
-      <section class="workspace" aria-label="Federation experiment">
+      <section
+        class="workspace"
+        data-i18n-label="workspace"
+        aria-label="Federation experiment"
+      >
         <div class="panel controls">
           <div class="panel-heading">
-            <h2>01 / Set the conditions</h2>
-            <span class="micro">REAL HTTP · IN-MEMORY FIXTURES</span>
+            <h2 data-i18n="conditions">01 / Set the conditions</h2>
+            <span class="micro" data-i18n="transport"
+              >REAL HTTP · IN-MEMORY FIXTURES</span
+            >
           </div>
           <div class="control-grid">
             <div>
-              <label for="operation">Operation</label
+              <label for="operation" data-i18n="operation">Operation</label
               ><select id="operation">
-                <option value="CatalogCards.graphql">
+                <option value="CatalogCards.graphql" data-i18n="cardsOperation">
                   Catalog cards · three domains
                 </option>
-                <option value="CatalogOnly.graphql">
+                <option value="CatalogOnly.graphql" data-i18n="onlyOperation">
                   Catalog only · one domain
                 </option>
               </select>
             </div>
             <div>
-              <label for="scenario">Inventory scenario</label
+              <label for="scenario" data-i18n="scenario"
+                >Inventory scenario</label
               ><select id="scenario">
-                <option value="healthy">Healthy</option>
-                <option value="inventory-error">Dependency error</option>
-                <option value="inventory-timeout">Response timeout</option>
-                <option value="missing-inventory">Missing record</option>
+                <option value="healthy" data-i18n="healthy">Healthy</option>
+                <option value="inventory-error" data-i18n="dependencyError">
+                  Dependency error
+                </option>
+                <option value="inventory-timeout" data-i18n="timeout">
+                  Response timeout
+                </option>
+                <option value="missing-inventory" data-i18n="missing">
+                  Missing record
+                </option>
               </select>
             </div>
             <div class="run-controls">
               <label class="check"
-                ><input id="duplicates" type="checkbox" /> Repeat one SKU</label
+                ><input id="duplicates" type="checkbox" /><span
+                  data-i18n="duplicates"
+                  >Repeat one SKU</span
+                ></label
               ><button id="run" type="button">
-                Run query <span aria-hidden="true">↗</span>
+                <span id="run-label">Run query</span
+                ><span class="run-arrow" aria-hidden="true">↗</span>
               </button>
             </div>
           </div>
@@ -76,20 +117,24 @@
         <div class="split">
           <section class="panel query-panel">
             <div class="panel-heading">
-              <h2>02 / Send one query</h2>
-              <span class="micro">NAMED OPERATION</span>
+              <h2 data-i18n="send">02 / Send one query</h2>
+              <span class="micro" data-i18n="named">NAMED OPERATION</span>
             </div>
-            <pre id="query" tabindex="0" aria-label="GraphQL query">
-Loading operation…</pre
+            <pre
+              id="query"
+              tabindex="0"
+              data-i18n-label="queryLabel"
+              aria-label="GraphQL query"
             >
-            <div class="query-foot">
+Loading operation…</pre>
+            <div class="query-foot" data-i18n="queryFoot">
               The same query runs against the local Apollo gateway.<br />Inventory
               is nullable by design. Unknown is never “sold out”.
             </div>
           </section>
           <section class="panel trace-panel">
             <div class="panel-heading">
-              <h2>03 / Follow the work</h2>
+              <h2 data-i18n="follow">03 / Follow the work</h2>
               <span class="micro" id="fetch-count">READY</span>
             </div>
             <div
@@ -97,17 +142,24 @@ Loading operation…</pre
               class="graph"
               aria-label="Catalog resolves first, then inventory and merchants"
             >
-              <div class="graph-root">Gateway</div>
+              <div class="graph-root" data-i18n="gateway">Gateway</div>
               <span class="graph-arrow" aria-hidden="true">↓</span>
-              <div class="graph-root secondary" data-domain="catalog">
+              <div
+                class="graph-root secondary"
+                data-domain="catalog"
+                data-i18n="catalog"
+              >
                 Catalog
               </div>
               <span id="branches" class="graph-arrow" aria-hidden="true"
                 >↙ &nbsp; ↘</span
               >
               <div class="graph-children">
-                <span data-domain="inventory">Inventory</span
-                ><span data-domain="merchants">Merchants</span>
+                <span data-domain="inventory" data-i18n="inventory"
+                  >Inventory</span
+                ><span data-domain="merchants" data-i18n="merchants"
+                  >Merchants</span
+                >
               </div>
             </div>
             <div id="trace" class="trace-list">
@@ -115,7 +167,7 @@ Loading operation…</pre
                 Run a query to inspect dependency calls and loader batches.
               </p>
             </div>
-            <p class="trace-foot">
+            <p class="trace-foot" data-i18n="traceFoot">
               Durations are observations from this local run, not benchmarks. A
               timed-out response cannot report its batch details.
             </p>
@@ -123,7 +175,7 @@ Loading operation…</pre
         </div>
         <section class="results">
           <div class="results-heading">
-            <h2>04 / Read the product result</h2>
+            <h2 data-i18n="resultHeading">04 / Read the product result</h2>
             <p id="status" role="status" aria-live="polite">
               Choose a condition and run the query.
             </p>
@@ -131,33 +183,40 @@ Loading operation…</pre
           <div id="cards" class="cards"></div>
           <details class="panel raw">
             <summary>
-              Inspect raw GraphQL response <span aria-hidden="true">+</span>
+              <span data-i18n="raw">Inspect raw GraphQL response</span
+              ><span aria-hidden="true">+</span>
             </summary>
-            <pre id="response" tabindex="0">No response yet.</pre>
+            <pre
+              id="response"
+              tabindex="0"
+              data-i18n-label="responseLabel"
+              aria-label="Raw GraphQL response"
+            >
+No response yet.</pre>
           </details>
         </section>
       </section>
       <section class="principles">
         <article>
           <span>01</span>
-          <h3>Compose ownership</h3>
-          <p>
+          <h3 data-i18n="ownership">Compose ownership</h3>
+          <p data-i18n="ownershipBody">
             Catalog owns product identity. Inventory extends the entity.
             Merchant details resolve through a second entity reference.
           </p>
         </article>
         <article>
           <span>02</span>
-          <h3>Keep uncertainty visible</h3>
-          <p>
+          <h3 data-i18n="uncertainty">Keep uncertainty visible</h3>
+          <p data-i18n="uncertaintyBody">
             A missing record, sold-out stock and an unavailable dependency have
             different meanings. The interface preserves that distinction.
           </p>
         </article>
         <article>
           <span>03</span>
-          <h3>Make the contract executable</h3>
-          <p>
+          <h3 data-i18n="contractHeading">Make the contract executable</h3>
+          <p data-i18n="contractBody">
             Composition, API schema diffs and named operation validation run
             before integration tests. Each catches a different class of
             breakage.
@@ -165,14 +224,12 @@ Loading operation…</pre
         </article>
       </section>
       <footer>
-        <strong>A small lab, with inspectable decisions.</strong>
-        <p>
+        <strong data-i18n="footer"
+          >A small lab, with inspectable decisions.</strong
+        >
+        <p data-i18n="footerBody">
           Original personal project. All records, faults and timing thresholds
           are synthetic. No production architecture or performance claims.
-        </p>
-        <p lang="ko">
-          가상 데이터로 엔티티 결합, 요청 단위 배치, 부분 실패, 스키마 호환성을
-          직접 검증하는 개인 실험입니다.
         </p>
       </footer>
     </main>
