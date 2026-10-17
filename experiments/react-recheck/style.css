@@ -1,0 +1,156 @@
+:root {
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+  color: #142238;
+  background: #f7f9fc;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+h1 {
+  font-size: clamp(29px, 5vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+h2 {
+  font-size: 21px;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #275a9f;
+}
+p {
+  line-height: 1.65;
+  word-break: keep-all;
+}
+.muted {
+  color: #526277;
+  font-size: 14px;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 22px 0;
+}
+button,
+select {
+  font: inherit;
+  padding: 10px 13px;
+  border: 1px solid #b3c2d8;
+  border-radius: 6px;
+  background: white;
+  color: #17345b;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.45;
+}
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #3272d6;
+  outline-offset: 3px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.card,
+.panel {
+  background: white;
+  border: 1px solid #d9e2ed;
+  border-radius: 10px;
+  padding: 18px;
+}
+.card h3 {
+  font-size: 16px;
+  min-height: 38px;
+}
+.card strong {
+  display: block;
+  font-size: 26px;
+  margin: 14px 0;
+}
+.status {
+  font-size: 13px;
+  color: #526277;
+}
+dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+  font-size: 14px;
+}
+dt {
+  font-weight: 600;
+}
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #edf2f9;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 12px;
+  max-height: 480px;
+  overflow: auto;
+}
+code {
+  font-size: 0.9em;
+}
+.recording {
+  margin-top: 28px;
+}
+li {
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+summary {
+  cursor: pointer;
+  padding: 10px 0;
+}
+.error {
+  color: #9b2637;
+}
+@media (max-width: 560px) {
+  main {
+    padding: 28px 18px 48px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .card h3 {
+    min-height: 0;
+  }
+  .card strong {
+    margin: 8px 0;
+  }
+  dl {
+    grid-template-columns: 110px 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+}

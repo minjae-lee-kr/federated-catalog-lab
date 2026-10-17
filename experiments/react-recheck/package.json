@@ -1,0 +1,23 @@
+{
+  "name": "react-recheck-experiment",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node server.mjs",
+    "test": "node --test contract.test.mjs",
+    "audit": "node audit-record.mjs",
+    "check:negative": "node check-negative-controls.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "engines": {
+    "node": ">=24.19.0 <25"
+  },
+  "packageManager": "pnpm@11.25.0"
+}

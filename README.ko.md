@@ -8,6 +8,8 @@
 - **재고 조회 하나가 실패하면 무엇을 남길까요?** [부분 응답 비교](https://minjae-lee-kr.github.io/research/partial-data/)에서 배치 오류와 null 경계를 바꿔 봅니다. 재현: `pnpm batch-failure`.
 - **다음 캐시 조회에 오류가 없으면 복구된 걸까요?** [클라이언트 캐시 실험](docs/client-cache.ko.md)은 오류 정책과 캐시 쓰기가 다음 조회에 미치는 영향을 다룹니다. 재현: `pnpm client-cache`.
 
+- **오류가 사라지면 재확인도 성공한 걸까요?** [React 후속 실험](docs/react-recheck.ko.md)은 Promise, hook, 실제 DOM을 비교하고 확인 상태를 별도로 관리할 때의 비용을 다룹니다. [실행 방법](experiments/react-recheck/README.ko.md).
+
 ## Cancellation Debt
 
 **응답은 끝났지만, 작업은 끝나지 않았다.**

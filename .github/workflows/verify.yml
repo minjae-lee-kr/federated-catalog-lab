@@ -23,3 +23,9 @@ jobs:
           version: 11.25.0
       - run: pnpm install --frozen-lockfile
       - run: pnpm verify
+      - name: Install React observation harness
+        run: pnpm --dir experiments/react-recheck install --frozen-lockfile
+      - name: Build React observation harness
+        run: pnpm --dir experiments/react-recheck build
+      - name: Test fixed React request contracts
+        run: pnpm --dir experiments/react-recheck test
