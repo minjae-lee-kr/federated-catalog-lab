@@ -10,7 +10,7 @@ The practical question: **who owns a permit after its caller gives up?**
 
 ## Run the experiment
 
-Requires Node.js **24.19.0** and pnpm **11.25.0**. No credentials, Docker or external services.
+Requires Node.js **24.19.0 or newer in the 24.x line** and pnpm **11.25.0**. Installation enforces this minimum; CI runs on 24.19.0. No credentials, Docker or external services.
 
 ```sh
 pnpm install --frozen-lockfile
