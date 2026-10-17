@@ -4,9 +4,11 @@
 
 **The request ended. The work did not.**
 
-A concurrency limiter can report **one held permit while four jobs are still running**. This lab implements request-scoped cancellation and permits owned until work settles, then compares their behavior over real Apollo Federation HTTP calls.
+A product page can stop waiting for inventory while the inventory work continues. If the limiter returns that work's execution slot on timeout, it can admit more work while the previous work still consumes capacity.
 
-The practical question: **who owns a permit after its caller gives up?**
+This independent, synthetic lab sends real HTTP requests through an Apollo Federation gateway combining catalog, inventory and merchant data. It compares four cancellation and admission policies, then reconstructs active work and held slots (permits) separately from events and HTTP responses. The deliberately wrong policy can show **one held permit while four jobs are still running**.
+
+**Return the execution slot when the work actually ends.** Holding it keeps the limit meaningful, but abandoned work occupies capacity and new requests may be rejected. Cooperative cancellation helps only when the work responds to it; here that work is a timer, with all services in one Node process.
 
 ## Run the experiment
 
