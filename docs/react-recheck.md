@@ -103,6 +103,10 @@ Caching kept the screen useful. To say a value had been checked again, the scree
 
 ## Run it and read the record
 
+[Compare the recorded results in English or Korean](https://minjae-lee-kr.github.io/research/react-recheck/?lang=en). Switch between two policies and three steps. This reader displays saved observations; it does not rerun the experiment in your browser.
+
+The public capture was newly run at source `888784efaf8869c09834459eb7889f79b17014a9`. The [original JSON](https://minjae-lee-kr.github.io/research/react-recheck/recording.json) has SHA-256 `a39a4881cd04a400795aae3ad4f5291146813ef6902d3c58e55bd82e7fc0863e`. Sources and bundle were unchanged across the run; the consistency audit and ten mutation controls passed. Of 133 tracked files, 127 matched Git blobs byte for byte; six documentation/configuration files differed only by CRLF/LF line endings. Hashes establish byte consistency, not who performed the execution.
+
 The [run guide](../experiments/react-recheck/README.md) covers installing the pinned dependencies and starting the local observation server. In a real browser, run the healthy lookup, failed lookup and cache read for each policy, then save a new record. New executions do not overwrite earlier observations.
 
 Start with the failed HTTP response, then compare `data`, `previousData`, `error.data` and the actual product card. Finally, check that the last step sent zero requests. That separates the observation that an error disappeared from the claim that a server lookup succeeded.

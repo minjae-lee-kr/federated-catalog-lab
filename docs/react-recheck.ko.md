@@ -103,6 +103,10 @@ await observable.reobserve({ fetchPolicy: 'cache-first' });
 
 ## 직접 실행하고 기록 읽기
 
+[한·영 결과 비교 화면](https://minjae-lee-kr.github.io/research/react-recheck/?lang=ko)에서 두 정책과 세 단계를 바꿔 볼 수 있습니다. 이 화면은 저장한 관측 결과를 읽으며, 브라우저에서 실험을 다시 실행하지는 않습니다.
+
+공개 기록은 소스 `888784efaf8869c09834459eb7889f79b17014a9`에서 새로 실행했습니다. [원본 JSON](https://minjae-lee-kr.github.io/research/react-recheck/recording.json)의 SHA-256은 `a39a4881cd04a400795aae3ad4f5291146813ef6902d3c58e55bd82e7fc0863e`입니다. 실행 전후 소스와 번들은 같았고, 기록 검사와 10개 변조 대조 검사를 통과했습니다. 추적 파일 133개 중 127개는 Git 원문과 같았으며, 나머지 6개는 문서·설정의 CRLF/LF 차이뿐이었습니다. 해시는 바이트 일치 여부를 확인할 뿐, 실행 주체를 인증하지 않습니다.
+
 [실행 안내](../experiments/react-recheck/README.ko.md)에서 고정된 의존성 설치와 로컬 관측 서버 실행 방법을 확인할 수 있습니다. 실제 브라우저에서 각 정책의 정상 조회 → 실패 조회 → 캐시 읽기를 순서대로 실행하고, 새 기록을 저장합니다. 기존 기록에 새 실행 결과를 덮어쓰지 않습니다.
 
 기록을 읽을 때는 실패 단계의 HTTP 응답에서 출발해 `data`, `previousData`, `error.data`, 실제 상품 카드 순서로 대조해 보세요. 그다음 마지막 단계의 요청 수가 0인지 확인하면, 오류가 없어졌다는 사실과 서버 조회가 성공했다는 주장을 분리해서 볼 수 있습니다.
